@@ -1,0 +1,17 @@
+spring:
+    main:
+        banner-mode: "off"
+---
+spring:
+  profiles.active: dev
+server:
+    address: 0.0.0.0
+    port: 9000
+
+logging:
+  file:
+    name: /home/inerjanuer/inerjanuer/bvc-test/deceval_11/logs/Server.log
+  logback:
+    rollingpolicy:
+      file-name-pattern: Server-%d{yyyy-MM-dd}.log
+      max-file-size: 10MB

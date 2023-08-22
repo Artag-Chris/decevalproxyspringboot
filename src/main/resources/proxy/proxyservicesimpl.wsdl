@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="ProxyServicesImplService"
+                  targetNamespace="http://services.proxy.deceval.com/"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  xmlns:tns="http://services.proxy.deceval.com/"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/">
+    <wsdl:types>
+        <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://services.proxy.deceval.com/">
+            <import namespace="http://services.proxy.deceval.com/" schemaLocation="proxyservicesimpl_schema2.xsd"/>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="firmarPagareCaracteresResponse">
+        <wsdl:part name="parameters" element="tns:firmarPagareCaracteresResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="generarTokenResponse">
+        <wsdl:part name="parameters" element="tns:generarTokenResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="notificacionPagaresFirmados">
+        <wsdl:part name="parameters" element="tns:notificacionPagaresFirmados">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="consultaPagareXMLResponse">
+        <wsdl:part name="parameters" element="tns:consultaPagareXMLResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="anulacionPagaresResponse">
+        <wsdl:part name="parameters" element="tns:anulacionPagaresResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="creacionPagaresCodificadoResponse">
+        <wsdl:part name="parameters" element="tns:creacionPagaresCodificadoResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="notificacionDesembolsoAnotacionEnCuenta">
+        <wsdl:part name="parameters" element="tns:notificacionDesembolsoAnotacionEnCuenta">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="consultarPagaresResponse">
+        <wsdl:part name="parameters" element="tns:consultarPagaresResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="firmarPagareConCertificadoResponse">
+        <wsdl:part name="parameters" element="tns:firmarPagareConCertificadoResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="creacionPagaresFisicosCodificado">
+        <wsdl:part name="parameters" element="tns:creacionPagaresFisicosCodificado">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="registrarCustodiaPagareResponse">
+        <wsdl:part name="parameters" element="tns:registrarCustodiaPagareResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="firmarPagaresAsincronoResponse">
+        <wsdl:part name="parameters" element="tns:firmarPagaresAsincronoResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="consultarPagares">
+        <wsdl:part name="parameters" element="tns:consultarPagares">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="firmarPagares">
+        <wsdl:part name="parameters" element="tns:firmarPagares">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="solicitudRadicacionFichaTecnicaNatural">
+        <wsdl:part name="parameters" element="tns:solicitudRadicacionFichaTecnicaNatural">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="consultaPagareXML">
+        <wsdl:part name="parameters" element="tns:consultaPagareXML">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="registrarCustodiaPagare">
+        <wsdl:part name="parameters" element="tns:registrarCustodiaPagare">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="creacionGiradoresCodificados">
+        <wsdl:part name="parameters" element="tns:creacionGiradoresCodificados">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="firmarPagareCaracteres">
+        <wsdl:part name="parameters" element="tns:firmarPagareCaracteres">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="registrarAmortizacion">
+        <wsdl:part name="parameters" element="tns:registrarAmortizacion">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="creacionPagares">
+        <wsdl:part name="parameters" element="tns:creacionPagares">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="creacionPagaresFisicosCodificadoResponse">
+        <wsdl:part name="parameters" element="tns:creacionPagaresFisicosCodificadoResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="anulacionPagares">
+        <wsdl:part name="parameters" element="tns:anulacionPagares">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="cambiarEstadoProvisionalADefinitivo">
+        <wsdl:part name="parameters" element="tns:cambiarEstadoProvisionalADefinitivo">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="consultarPagaresNopdfResponse">
+        <wsdl:part name="parameters" element="tns:consultarPagaresNopdfResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="crearCertificadoFirma">
+        <wsdl:part name="parameters" element="tns:crearCertificadoFirma">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="cancelacionPagares">
+        <wsdl:part name="parameters" element="tns:cancelacionPagares">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="creacionPagaresCodificado">
+        <wsdl:part name="parameters" element="tns:creacionPagaresCodificado">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="creacionGiradoresCodificadosResponse">
+        <wsdl:part name="parameters" element="tns:creacionGiradoresCodificadosResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="crearCertificadoFirmaResponse">
+        <wsdl:part name="parameters" element="tns:crearCertificadoFirmaResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="cancelacionPagaresResponse">
+        <wsdl:part name="parameters" element="tns:cancelacionPagaresResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="solicitudRadicacionFichaTecnicaNaturalResponse">
+        <wsdl:part name="parameters" element="tns:solicitudRadicacionFichaTecnicaNaturalResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="consultarPagaresNopdf">
+        <wsdl:part name="parameters" element="tns:consultarPagaresNopdf">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="generacionMasivaCertificados">
+        <wsdl:part name="parameters" element="tns:generacionMasivaCertificados">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="creacionPagaresResponse">
+        <wsdl:part name="parameters" element="tns:creacionPagaresResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="creacionGiradores">
+        <wsdl:part name="parameters" element="tns:creacionGiradores">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="creacionGiradoresResponse">
+        <wsdl:part name="parameters" element="tns:creacionGiradoresResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="firmarPagareConCertificado">
+        <wsdl:part name="parameters" element="tns:firmarPagareConCertificado">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="generacionMasivaCertificadosResponse">
+        <wsdl:part name="parameters" element="tns:generacionMasivaCertificadosResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="generarToken">
+        <wsdl:part name="parameters" element="tns:generarToken">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="firmarPagaresAsincrono">
+        <wsdl:part name="parameters" element="tns:firmarPagaresAsincrono">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="notificacionPagaresFirmadosResponse">
+        <wsdl:part name="parameters" element="tns:notificacionPagaresFirmadosResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="cambiarEstadoProvisionalADefinitivoResponse">
+        <wsdl:part name="parameters" element="tns:cambiarEstadoProvisionalADefinitivoResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="firmarPagaresResponse">
+        <wsdl:part name="parameters" element="tns:firmarPagaresResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="registrarAmortizacionResponse">
+        <wsdl:part name="parameters" element="tns:registrarAmortizacionResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="notificacionDesembolsoAnotacionEnCuentaResponse">
+        <wsdl:part name="parameters" element="tns:notificacionDesembolsoAnotacionEnCuentaResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="ProxyServicesImpl">
+        <wsdl:operation name="crearCertificadoFirma">
+            <wsdl:input name="crearCertificadoFirma" message="tns:crearCertificadoFirma">
+            </wsdl:input>
+            <wsdl:output name="crearCertificadoFirmaResponse" message="tns:crearCertificadoFirmaResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="cancelacionPagares">
+            <wsdl:input name="cancelacionPagares" message="tns:cancelacionPagares">
+            </wsdl:input>
+            <wsdl:output name="cancelacionPagaresResponse" message="tns:cancelacionPagaresResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="notificacionPagaresFirmados">
+            <wsdl:input name="notificacionPagaresFirmados" message="tns:notificacionPagaresFirmados">
+            </wsdl:input>
+            <wsdl:output name="notificacionPagaresFirmadosResponse" message="tns:notificacionPagaresFirmadosResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="creacionPagaresCodificado">
+            <wsdl:input name="creacionPagaresCodificado" message="tns:creacionPagaresCodificado">
+            </wsdl:input>
+            <wsdl:output name="creacionPagaresCodificadoResponse" message="tns:creacionPagaresCodificadoResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="notificacionDesembolsoAnotacionEnCuenta">
+            <wsdl:input name="notificacionDesembolsoAnotacionEnCuenta"
+                        message="tns:notificacionDesembolsoAnotacionEnCuenta">
+            </wsdl:input>
+            <wsdl:output name="notificacionDesembolsoAnotacionEnCuentaResponse"
+                         message="tns:notificacionDesembolsoAnotacionEnCuentaResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="creacionPagaresFisicosCodificado">
+            <wsdl:input name="creacionPagaresFisicosCodificado" message="tns:creacionPagaresFisicosCodificado">
+            </wsdl:input>
+            <wsdl:output name="creacionPagaresFisicosCodificadoResponse"
+                         message="tns:creacionPagaresFisicosCodificadoResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="consultarPagares">
+            <wsdl:input name="consultarPagares" message="tns:consultarPagares">
+            </wsdl:input>
+            <wsdl:output name="consultarPagaresResponse" message="tns:consultarPagaresResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="firmarPagares">
+            <wsdl:input name="firmarPagares" message="tns:firmarPagares">
+            </wsdl:input>
+            <wsdl:output name="firmarPagaresResponse" message="tns:firmarPagaresResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="solicitudRadicacionFichaTecnicaNatural">
+            <wsdl:input name="solicitudRadicacionFichaTecnicaNatural"
+                        message="tns:solicitudRadicacionFichaTecnicaNatural">
+            </wsdl:input>
+            <wsdl:output name="solicitudRadicacionFichaTecnicaNaturalResponse"
+                         message="tns:solicitudRadicacionFichaTecnicaNaturalResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="consultaPagareXML">
+            <wsdl:input name="consultaPagareXML" message="tns:consultaPagareXML">
+            </wsdl:input>
+            <wsdl:output name="consultaPagareXMLResponse" message="tns:consultaPagareXMLResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="consultarPagaresNopdf">
+            <wsdl:input name="consultarPagaresNopdf" message="tns:consultarPagaresNopdf">
+            </wsdl:input>
+            <wsdl:output name="consultarPagaresNopdfResponse" message="tns:consultarPagaresNopdfResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="generacionMasivaCertificados">
+            <wsdl:input name="generacionMasivaCertificados" message="tns:generacionMasivaCertificados">
+            </wsdl:input>
+            <wsdl:output name="generacionMasivaCertificadosResponse" message="tns:generacionMasivaCertificadosResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="registrarCustodiaPagare">
+            <wsdl:input name="registrarCustodiaPagare" message="tns:registrarCustodiaPagare">
+            </wsdl:input>
+            <wsdl:output name="registrarCustodiaPagareResponse" message="tns:registrarCustodiaPagareResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="creacionGiradoresCodificados">
+            <wsdl:input name="creacionGiradoresCodificados" message="tns:creacionGiradoresCodificados">
+            </wsdl:input>
+            <wsdl:output name="creacionGiradoresCodificadosResponse" message="tns:creacionGiradoresCodificadosResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="firmarPagareCaracteres">
+            <wsdl:input name="firmarPagareCaracteres" message="tns:firmarPagareCaracteres">
+            </wsdl:input>
+            <wsdl:output name="firmarPagareCaracteresResponse" message="tns:firmarPagareCaracteresResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="creacionGiradores">
+            <wsdl:input name="creacionGiradores" message="tns:creacionGiradores">
+            </wsdl:input>
+            <wsdl:output name="creacionGiradoresResponse" message="tns:creacionGiradoresResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="firmarPagareConCertificado">
+            <wsdl:input name="firmarPagareConCertificado" message="tns:firmarPagareConCertificado">
+            </wsdl:input>
+            <wsdl:output name="firmarPagareConCertificadoResponse" message="tns:firmarPagareConCertificadoResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="registrarAmortizacion">
+            <wsdl:input name="registrarAmortizacion" message="tns:registrarAmortizacion">
+            </wsdl:input>
+            <wsdl:output name="registrarAmortizacionResponse" message="tns:registrarAmortizacionResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="generarToken">
+            <wsdl:input name="generarToken" message="tns:generarToken">
+            </wsdl:input>
+            <wsdl:output name="generarTokenResponse" message="tns:generarTokenResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="creacionPagares">
+            <wsdl:input name="creacionPagares" message="tns:creacionPagares">
+            </wsdl:input>
+            <wsdl:output name="creacionPagaresResponse" message="tns:creacionPagaresResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="firmarPagaresAsincrono">
+            <wsdl:input name="firmarPagaresAsincrono" message="tns:firmarPagaresAsincrono">
+            </wsdl:input>
+            <wsdl:output name="firmarPagaresAsincronoResponse" message="tns:firmarPagaresAsincronoResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="anulacionPagares">
+            <wsdl:input name="anulacionPagares" message="tns:anulacionPagares">
+            </wsdl:input>
+            <wsdl:output name="anulacionPagaresResponse" message="tns:anulacionPagaresResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="cambiarEstadoProvisionalADefinitivo">
+            <wsdl:input name="cambiarEstadoProvisionalADefinitivo" message="tns:cambiarEstadoProvisionalADefinitivo">
+            </wsdl:input>
+            <wsdl:output name="cambiarEstadoProvisionalADefinitivoResponse"
+                         message="tns:cambiarEstadoProvisionalADefinitivoResponse">
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="ProxyServicesImplServiceSoapBinding" type="tns:ProxyServicesImpl">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="crearCertificadoFirma">
+            <soap:operation soapAction="urn:CrearCertificadoFirma" style="document"/>
+            <wsdl:input name="crearCertificadoFirma">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="crearCertificadoFirmaResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="cancelacionPagares">
+            <soap:operation soapAction="urn:CancelacionPagares" style="document"/>
+            <wsdl:input name="cancelacionPagares">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="cancelacionPagaresResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="notificacionPagaresFirmados">
+            <soap:operation soapAction="urn:NotificacionPagaresFirmados" style="document"/>
+            <wsdl:input name="notificacionPagaresFirmados">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="notificacionPagaresFirmadosResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="creacionPagaresCodificado">
+            <soap:operation soapAction="urn:CreacionPagaresCodificado" style="document"/>
+            <wsdl:input name="creacionPagaresCodificado">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="creacionPagaresCodificadoResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="notificacionDesembolsoAnotacionEnCuenta">
+            <soap:operation soapAction="urn:NotificacionDesembolsoAnotacionEnCuenta" style="document"/>
+            <wsdl:input name="notificacionDesembolsoAnotacionEnCuenta">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="notificacionDesembolsoAnotacionEnCuentaResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="creacionPagaresFisicosCodificado">
+            <soap:operation soapAction="urn:CreacionPagaresFisicosCodificado" style="document"/>
+            <wsdl:input name="creacionPagaresFisicosCodificado">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="creacionPagaresFisicosCodificadoResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="consultarPagares">
+            <soap:operation soapAction="urn:ConsultarPagares" style="document"/>
+            <wsdl:input name="consultarPagares">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="consultarPagaresResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="firmarPagares">
+            <soap:operation soapAction="urn:FirmarPagares" style="document"/>
+            <wsdl:input name="firmarPagares">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="firmarPagaresResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="solicitudRadicacionFichaTecnicaNatural">
+            <soap:operation soapAction="urn:SolicitudRadicacionFichaTecnicaNatural" style="document"/>
+            <wsdl:input name="solicitudRadicacionFichaTecnicaNatural">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="solicitudRadicacionFichaTecnicaNaturalResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="consultaPagareXML">
+            <soap:operation soapAction="urn:ConsultaPagareXML" style="document"/>
+            <wsdl:input name="consultaPagareXML">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="consultaPagareXMLResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="consultarPagaresNopdf">
+            <soap:operation soapAction="urn:ConsultarPagaresNopdf" style="document"/>
+            <wsdl:input name="consultarPagaresNopdf">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="consultarPagaresNopdfResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="generacionMasivaCertificados">
+            <soap:operation soapAction="urn:GeneracionMasivaCertificados" style="document"/>
+            <wsdl:input name="generacionMasivaCertificados">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="generacionMasivaCertificadosResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="registrarCustodiaPagare">
+            <soap:operation soapAction="urn:RegistrarCustodiaPagare" style="document"/>
+            <wsdl:input name="registrarCustodiaPagare">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="registrarCustodiaPagareResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="creacionGiradoresCodificados">
+            <soap:operation soapAction="urn:CreacionGiradoresCodificados" style="document"/>
+            <wsdl:input name="creacionGiradoresCodificados">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="creacionGiradoresCodificadosResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="firmarPagareCaracteres">
+            <soap:operation soapAction="urn:FirmarPagareCaracteres" style="document"/>
+            <wsdl:input name="firmarPagareCaracteres">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="firmarPagareCaracteresResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="creacionGiradores">
+            <soap:operation soapAction="urn:CreacionGiradores" style="document"/>
+            <wsdl:input name="creacionGiradores">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="creacionGiradoresResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="firmarPagareConCertificado">
+            <soap:operation soapAction="urn:FirmarPagareConCertificado" style="document"/>
+            <wsdl:input name="firmarPagareConCertificado">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="firmarPagareConCertificadoResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="registrarAmortizacion">
+            <soap:operation soapAction="urn:RegistrarAmortizacion" style="document"/>
+            <wsdl:input name="registrarAmortizacion">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="registrarAmortizacionResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="generarToken">
+            <soap:operation soapAction="urn:GenerarToken" style="document"/>
+            <wsdl:input name="generarToken">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="generarTokenResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="creacionPagares">
+            <soap:operation soapAction="urn:CreacionPagares" style="document"/>
+            <wsdl:input name="creacionPagares">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="creacionPagaresResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="firmarPagaresAsincrono">
+            <soap:operation soapAction="urn:FirmarPagaresAsincrono" style="document"/>
+            <wsdl:input name="firmarPagaresAsincrono">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="firmarPagaresAsincronoResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="anulacionPagares">
+            <soap:operation soapAction="urn:AnulacionPagares" style="document"/>
+            <wsdl:input name="anulacionPagares">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="anulacionPagaresResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="cambiarEstadoProvisionalADefinitivo">
+            <soap:operation soapAction="urn:CambiarEstadoProvisionalADefinitivo" style="document"/>
+            <wsdl:input name="cambiarEstadoProvisionalADefinitivo">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="cambiarEstadoProvisionalADefinitivoResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="ProxyServicesImplService">
+        <wsdl:port name="ProxyServicesImplPort" binding="tns:ProxyServicesImplServiceSoapBinding">
+            <soap:address location="http://localhost:9090/ProxyServicesImplPort"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

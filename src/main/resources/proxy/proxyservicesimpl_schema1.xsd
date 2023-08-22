@@ -1,0 +1,27 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+           targetNamespace="http://deceval.com/mrc/solicitud/model/" version="1.0">
+
+    <xs:complexType name="InformacionPagareTO">
+        <xs:sequence>
+            <xs:element name="EntidadBancariaId" nillable="true" type="xs:string"/>
+            <xs:element name="Estado" nillable="true" type="xs:string"/>
+            <xs:element name="TipoDocumentoEntidad" nillable="true" type="xs:string"/>
+            <xs:element name="NumeroIdentificacionEntidad" nillable="true" type="xs:string"/>
+            <xs:element name="TipoDocumentoFirmante" nillable="true" type="xs:string"/>
+            <xs:element name="NumeroDocumentoFirmante" nillable="true" type="xs:string"/>
+            <xs:element name="NombreFirmante" nillable="true" type="xs:string"/>
+            <xs:element name="ApellidoFirmante" nillable="true" type="xs:string"/>
+            <xs:element name="IpOrigen" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="InformacionFirmaPagareTO">
+        <xs:sequence>
+            <xs:element name="CodigoError" nillable="true" type="xs:string"/>
+            <xs:element name="DescripcionError" nillable="true" type="xs:string"/>
+            <xs:element name="UrlFirmaPagare" nillable="true" type="xs:string"/>
+            <xs:element name="Token" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

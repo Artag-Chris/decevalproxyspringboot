@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"   xmlns:http-conf="http://cxf.apache.org/transports/http/configuration"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-extension-*.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+	<jaxws:endpoint xmlns:tns="http://services.proxy.deceval.com/"
+		id="proxyservices" implementor="com.deceval.proxy.services.ProxyServicesImpl"
+		wsdlLocation="/proxy/proxyservicesimpl.wsdl" endpointName="tns:ProxyServicesImplPort"
+		serviceName="tns:ProxyServicesImplService" address="/ProxyServicesImplPort">
+		<http-conf:conduit name="*.http-conduit">
+			<http-conf:client
+					ConnectionTimeout="1000"
+					ReceiveTimeout="1000"/>
+		</http-conf:conduit>
+	</jaxws:endpoint>
+</beans>

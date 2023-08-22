@@ -1,0 +1,936 @@
+<xsd:schema xmlns:ns0="http://deceval.com/sdl/services/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://deceval.com/sdl/services/">
+<xsd:complexType name="solicitudConsultaPagareServiceXMLDTO">
+<xsd:sequence>
+<xsd:element name="codigoDeceval" type="xsd:int" minOccurs="0"/>
+<xsd:element name="header" type="ns0:headerDTO" minOccurs="0"/>
+<xsd:element name="idTipoIdentificacionFirmante" type="xsd:int" minOccurs="0"/>
+<xsd:element name="numIdentificacionFirmante" type="xsd:string" minOccurs="0"/>
+<xsd:element name="numPagareEntidad" type="xsd:string" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="solicitudCrearGiradorDaneServiceDTO">
+<xsd:sequence>
+<xsd:element name="crearGiradorDTO" type="ns0:crearGiradorDaneServiceDTO" minOccurs="0"/>
+<xsd:element name="header" type="ns0:headerDTO" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="respuestaFirmarPagaresDTO">
+<xsd:sequence>
+<xsd:element name="descripcion" type="xsd:string" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="respuestaDocumentoPagareDaneServiceDTO">
+<xsd:sequence>
+<xsd:element name="codigoError" type="xsd:string" minOccurs="0"/>
+<xsd:element name="descripcion" type="xsd:string" minOccurs="0"/>
+<xsd:element name="exitoso" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="respuesta" type="ns0:documentoPagareDaneServiceDTO" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="solicitudCancelacionPagaresServiceDTO">
+<xsd:sequence>
+<xsd:element name="cancelacionPagaresDTO" type="ns0:cancelacionPagaresServiceDTO" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+<xsd:element name="header" type="ns0:headerDTO" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="respuestaPagaresFirmadosDTO">
+<xsd:sequence>
+<xsd:element name="codigoError" type="xsd:string" minOccurs="0"/>
+<xsd:element name="descripcion" type="xsd:string" minOccurs="0"/>
+<xsd:element name="exitoso" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="listaRespusta" type="ns0:pagaresFirmadosDTO" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="crearGiradorDaneServiceDTO">
+<xsd:sequence>
+<xsd:element name="agenteAutoretenedor_Jur" type="xsd:int" minOccurs="0"/>
+<xsd:element name="camaraComercioNo_Jur" type="xsd:string" minOccurs="0"/>
+<xsd:element name="circuloNo_Jur" type="xsd:string" minOccurs="0"/>
+<xsd:element name="correoElectronico" type="xsd:string" minOccurs="0"/>
+<xsd:element name="cuentaGirador" type="xsd:long"/>
+<xsd:element name="declarante_Jur" type="xsd:int" minOccurs="0"/>
+<xsd:element name="direccion1PersonaGrupo_PGP" type="xsd:string" minOccurs="0"/>
+<xsd:element name="direccion2PersonaGrupo_PGP" type="xsd:string" minOccurs="0"/>
+<xsd:element name="direccion3PersonaGrupo_PGP" type="xsd:string" minOccurs="0"/>
+<xsd:element name="escrituraNo_Jur" type="xsd:string" minOccurs="0"/>
+<xsd:element name="estadoCivil" type="xsd:string" minOccurs="0"/>
+<xsd:element name="fax1PersonaGrupo_PGP" type="xsd:string" minOccurs="0"/>
+<xsd:element name="fax2PersonaGrupo_PGP" type="xsd:string" minOccurs="0"/>
+<xsd:element name="fax3PersonaGrupo_PGP" type="xsd:string" minOccurs="0"/>
+<xsd:element name="fechaCamara_Jur" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="fechaConstitucion_Jur" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="fechaEscritura_Jur" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="fechaExpedicion_Nat" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="fechaNacimiento_Nat" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="fkIdCiudadCamara_Jur" type="xsd:string" minOccurs="0"/>
+<xsd:element name="fkIdCiudadDomicilio_Nat" type="xsd:string" minOccurs="0"/>
+<xsd:element name="fkIdCiudadExpedicion_Nat" type="xsd:string" minOccurs="0"/>
+<xsd:element name="fkIdCiudad_Jur" type="xsd:string" minOccurs="0"/>
+<xsd:element name="fkIdClasePersona" type="xsd:int" minOccurs="0"/>
+<xsd:element name="fkIdDepartamentoCamara_Jur" type="xsd:string" minOccurs="0"/>
+<xsd:element name="fkIdDepartamentoDomicilio_Nat" type="xsd:string" minOccurs="0"/>
+<xsd:element name="fkIdDepartamentoExpedicion_Nat" type="xsd:string" minOccurs="0"/>
+<xsd:element name="fkIdDepartamento_Jur" type="xsd:string" minOccurs="0"/>
+<xsd:element name="fkIdPaisCamara_Jur" type="xsd:string" minOccurs="0"/>
+<xsd:element name="fkIdPaisDomicilio_Nat" type="xsd:string" minOccurs="0"/>
+<xsd:element name="fkIdPaisExpedicion_Nat" type="xsd:string" minOccurs="0"/>
+<xsd:element name="fkIdPaisNacionalidad_Nat" type="xsd:string" minOccurs="0"/>
+<xsd:element name="fkIdPais_Jur" type="xsd:string" minOccurs="0"/>
+<xsd:element name="fkIdTipoDocumento" type="xsd:int" minOccurs="0"/>
+<xsd:element name="identificacionEmisor" type="xsd:string" minOccurs="0"/>
+<xsd:element name="libroNo_Jur" type="xsd:string" minOccurs="0"/>
+<xsd:element name="listaRepresentantesLegales" type="ns0:representanteLegalServiceDTO" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+<xsd:element name="mensajeRespuesta" type="xsd:string" minOccurs="0"/>
+<xsd:element name="nombresNat_Nat" type="xsd:string" minOccurs="0"/>
+<xsd:element name="notariaNo_Jur" type="xsd:string" minOccurs="0"/>
+<xsd:element name="numeroCelular" type="xsd:string" minOccurs="0"/>
+<xsd:element name="numeroDocumento" type="xsd:string" minOccurs="0"/>
+<xsd:element name="pensionado" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="primerApellido_Nat" type="xsd:string" minOccurs="0"/>
+<xsd:element name="razonSocial_Jur" type="xsd:string" minOccurs="0"/>
+<xsd:element name="regitroSuper_Jur" type="xsd:string" minOccurs="0"/>
+<xsd:element name="residente_Jur" type="xsd:int" minOccurs="0"/>
+<xsd:element name="salario" type="xsd:double" minOccurs="0"/>
+<xsd:element name="segundoApellido_Nat" type="xsd:string" minOccurs="0"/>
+<xsd:element name="telefono1PersonaGrupo_PGP" type="xsd:string" minOccurs="0"/>
+<xsd:element name="telefono2PersonaGrupo_PGP" type="xsd:string" minOccurs="0"/>
+<xsd:element name="telefono3PersonaGrupo_PGP" type="xsd:string" minOccurs="0"/>
+<xsd:element name="tiempoServicio" type="xsd:string" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="respuestaAnulacionPagaresDTO">
+<xsd:sequence>
+<xsd:element name="codigoError" type="xsd:string" minOccurs="0"/>
+<xsd:element name="codigoOperacion" type="xsd:string" minOccurs="0"/>
+<xsd:element name="descripcion" type="xsd:string" minOccurs="0"/>
+<xsd:element name="exitoso" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="mensajeRespuesta" type="xsd:string" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="respuestaCrearGiradorServiceDTO">
+<xsd:sequence>
+<xsd:element name="codigoError" type="xsd:string" minOccurs="0"/>
+<xsd:element name="descripcion" type="xsd:string" minOccurs="0"/>
+<xsd:element name="exitoso" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="listaRespusta" type="ns0:crearGiradorServiceDTO" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="informacionFirmaPagareXmlDTO">
+<xsd:sequence>
+<xsd:element name="codigoSha" type="xsd:string" minOccurs="0"/>
+<xsd:element name="fechaFirma" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="idDocumentoPagare" type="xsd:long" minOccurs="0"/>
+<xsd:element name="idRolFirmante" type="xsd:long" minOccurs="0"/>
+<xsd:element name="motivo" type="xsd:string" minOccurs="0"/>
+<xsd:element name="numeroDocumento" type="xsd:string" minOccurs="0"/>
+<xsd:element name="tipoDocumento" type="xsd:int" minOccurs="0"/>
+<xsd:element name="xmlPagare" type="xsd:string" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="informacionPagareXmlServiceDTO">
+<xsd:sequence>
+<xsd:element name="codigoSha" type="xsd:string" minOccurs="0"/>
+<xsd:element name="estadoPagare" type="xsd:string" minOccurs="0"/>
+<xsd:element name="fechaGrabacionPagare" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="idPagareDeceval" type="xsd:int" minOccurs="0"/>
+<xsd:element name="nombreOtorgante" type="xsd:string" minOccurs="0"/>
+<xsd:element name="numPagareEntidad" type="xsd:string" minOccurs="0"/>
+<xsd:element name="numeroDocumentoOtorgante" type="xsd:string" minOccurs="0"/>
+<xsd:element name="rolfirmante" type="xsd:int" minOccurs="0"/>
+<xsd:element name="tipoDocumentoOtorgante" type="xsd:string" minOccurs="0"/>
+<xsd:element name="xmlPagare" type="xsd:string" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="respuestaCancelacionPagaresServiceDTO">
+<xsd:sequence>
+<xsd:element name="codigoError" type="xsd:string" minOccurs="0"/>
+<xsd:element name="descripcion" type="xsd:string" minOccurs="0"/>
+<xsd:element name="exitoso" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="listaRespusta" type="ns0:cancelacionPagaresServiceDTO" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="solicitudFirmarPagaresCaracteresDTO">
+<xsd:sequence>
+<xsd:element name="header" type="ns0:headerDTO" minOccurs="0"/>
+<xsd:element name="informacionFirmaPagareCaracteresDTO" type="ns0:informacionFirmaPagareCaracteresDTO" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="respuestaCambiarEstadoProvisionalADefinitivoDTO">
+<xsd:sequence>
+<xsd:element name="codigoError" type="xsd:string" minOccurs="0"/>
+<xsd:element name="descripcion" type="xsd:string" minOccurs="0"/>
+<xsd:element name="exitoso" type="xsd:boolean" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="respuestaDocumentoPagareServiceDTO">
+<xsd:sequence>
+<xsd:element name="codigoError" type="xsd:string" minOccurs="0"/>
+<xsd:element name="descripcion" type="xsd:string" minOccurs="0"/>
+<xsd:element name="exitoso" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="listaRespusta" type="ns0:documentoPagareServiceDTO" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="archivoAdjuntoSolicitudVO">
+<xsd:complexContent>
+<xsd:extension base="ns0:baseDataVO">
+<xsd:sequence>
+<xsd:element name="archivo" type="xsd:string" minOccurs="0"/>
+<xsd:element name="nombreArchivo" type="xsd:string" minOccurs="0"/>
+<xsd:element name="size" type="xsd:long" minOccurs="0"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="solicitudGeneracionMasivaCertificadosDTO">
+<xsd:sequence>
+<xsd:element name="header" type="ns0:headerDTO" minOccurs="0"/>
+<xsd:element name="noPagareEntidad" type="ns0:entradasGeneracionMasivaCertificadosDTO" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+<xsd:element name="tipoCertificado" type="xsd:string" minOccurs="0"/>
+<xsd:element name="tipoPagare" type="xsd:string" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="informacionPagareServiceDTO">
+<xsd:sequence>
+<xsd:element name="estadoPagare" type="xsd:string" minOccurs="0"/>
+<xsd:element name="fechaFirmaPagare" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="fechaGrabacionPagare" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="idPagareDeceval" type="xsd:int" minOccurs="0"/>
+<xsd:element name="nombreOtorgante" type="xsd:string" minOccurs="0"/>
+<xsd:element name="numPagareEntidad" type="xsd:string" minOccurs="0"/>
+<xsd:element name="numeroDocumentoOtorgante" type="xsd:string" minOccurs="0"/>
+<xsd:element name="pdfPagare" type="ns0:archivoAdjuntoDTO" minOccurs="0"/>
+<xsd:element name="tipoDocumentoOtorgante" type="xsd:string" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="solicitudCrearPagareDaneServiceDTO">
+<xsd:sequence>
+<xsd:element name="documentoPagareServiceDTO" type="ns0:documentoPagareDaneServiceDTO" minOccurs="0"/>
+<xsd:element name="header" type="ns0:headerDTO" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="solicitudCrearGiradorServiceDTO">
+<xsd:sequence>
+<xsd:element name="crearGiradorDTO" type="ns0:crearGiradorServiceDTO" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+<xsd:element name="header" type="ns0:headerDTO" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="solicitudDesembolsoAnotarCuentaDTO">
+<xsd:sequence>
+<xsd:element name="desembolsoAnotarCuentaDTO" type="ns0:desembolsoAnotarCuentaDTO" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+<xsd:element name="header" type="ns0:headerDTO" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="pagaresFirmadosDTO">
+<xsd:sequence>
+<xsd:element name="idDocumentoPagare" type="xsd:long" minOccurs="0"/>
+<xsd:element name="identificacionEmisor" type="xsd:string" minOccurs="0"/>
+<xsd:element name="mensajeRespuesta" type="xsd:string" minOccurs="0"/>
+<xsd:element name="numPagareEntidad" type="xsd:string" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="respuestaGeneracionMasivaCertificadosDTO">
+<xsd:sequence>
+<xsd:element name="codigoError" type="xsd:string" minOccurs="0"/>
+<xsd:element name="codigoSolicitud" type="xsd:string" minOccurs="0"/>
+<xsd:element name="descripcion" type="xsd:string" minOccurs="0"/>
+<xsd:element name="exitoso" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="mensajeRespuesta" type="xsd:string" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="archivoAdjuntoDTO">
+<xsd:sequence>
+<xsd:element name="contenido" type="xsd:string" minOccurs="0"/>
+<xsd:element name="nombreArchivo" type="xsd:string" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="crearGiradorServiceDTO">
+<xsd:sequence>
+<xsd:element name="agenteAutoretenedor_Jur" type="xsd:int" minOccurs="0"/>
+<xsd:element name="camaraComercioNo_Jur" type="xsd:string" minOccurs="0"/>
+<xsd:element name="circuloNo_Jur" type="xsd:string" minOccurs="0"/>
+<xsd:element name="correoElectronico" type="xsd:string" minOccurs="0"/>
+<xsd:element name="cuentaGirador" type="xsd:long"/>
+<xsd:element name="declarante_Jur" type="xsd:int" minOccurs="0"/>
+<xsd:element name="direccion1PersonaGrupo_PGP" type="xsd:string" minOccurs="0"/>
+<xsd:element name="direccion2PersonaGrupo_PGP" type="xsd:string" minOccurs="0"/>
+<xsd:element name="direccion3PersonaGrupo_PGP" type="xsd:string" minOccurs="0"/>
+<xsd:element name="escrituraNo_Jur" type="xsd:string" minOccurs="0"/>
+<xsd:element name="estadoCivil" type="xsd:string" minOccurs="0"/>
+<xsd:element name="fax1PersonaGrupo_PGP" type="xsd:string" minOccurs="0"/>
+<xsd:element name="fax2PersonaGrupo_PGP" type="xsd:string" minOccurs="0"/>
+<xsd:element name="fax3PersonaGrupo_PGP" type="xsd:string" minOccurs="0"/>
+<xsd:element name="fechaCamara_Jur" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="fechaConstitucion_Jur" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="fechaEscritura_Jur" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="fechaExpedicion_Nat" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="fechaNacimiento_Nat" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="fkIdCiudadCamara_Jur" type="xsd:int" minOccurs="0"/>
+<xsd:element name="fkIdCiudadDomicilio_Nat" type="xsd:int" minOccurs="0"/>
+<xsd:element name="fkIdCiudadExpedicion_Nat" type="xsd:int" minOccurs="0"/>
+<xsd:element name="fkIdCiudad_Jur" type="xsd:int" minOccurs="0"/>
+<xsd:element name="fkIdClasePersona" type="xsd:int" minOccurs="0"/>
+<xsd:element name="fkIdDepartamentoCamara_Jur" type="xsd:int" minOccurs="0"/>
+<xsd:element name="fkIdDepartamentoDomicilio_Nat" type="xsd:int" minOccurs="0"/>
+<xsd:element name="fkIdDepartamentoExpedicion_Nat" type="xsd:int" minOccurs="0"/>
+<xsd:element name="fkIdDepartamento_Jur" type="xsd:int" minOccurs="0"/>
+<xsd:element name="fkIdPaisCamara_Jur" type="xsd:int" minOccurs="0"/>
+<xsd:element name="fkIdPaisDomicilio_Nat" type="xsd:int" minOccurs="0"/>
+<xsd:element name="fkIdPaisExpedicion_Nat" type="xsd:int" minOccurs="0"/>
+<xsd:element name="fkIdPaisNacionalidad_Nat" type="xsd:int" minOccurs="0"/>
+<xsd:element name="fkIdPais_Jur" type="xsd:int" minOccurs="0"/>
+<xsd:element name="fkIdTipoDocumento" type="xsd:int" minOccurs="0"/>
+<xsd:element name="identificacionEmisor" type="xsd:string" minOccurs="0"/>
+<xsd:element name="libroNo_Jur" type="xsd:string" minOccurs="0"/>
+<xsd:element name="listaRepresentantesLegales" type="ns0:representanteLegalServiceDTO" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+<xsd:element name="mensajeRespuesta" type="xsd:string" minOccurs="0"/>
+<xsd:element name="nombresNat_Nat" type="xsd:string" minOccurs="0"/>
+<xsd:element name="notariaNo_Jur" type="xsd:string" minOccurs="0"/>
+<xsd:element name="numeroCelular" type="xsd:string" minOccurs="0"/>
+<xsd:element name="numeroDocumento" type="xsd:string" minOccurs="0"/>
+<xsd:element name="pensionado" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="primerApellido_Nat" type="xsd:string" minOccurs="0"/>
+<xsd:element name="razonSocial_Jur" type="xsd:string" minOccurs="0"/>
+<xsd:element name="regitroSuper_Jur" type="xsd:string" minOccurs="0"/>
+<xsd:element name="residente_Jur" type="xsd:int" minOccurs="0"/>
+<xsd:element name="salario" type="xsd:double" minOccurs="0"/>
+<xsd:element name="segundoApellido_Nat" type="xsd:string" minOccurs="0"/>
+<xsd:element name="telefono1PersonaGrupo_PGP" type="xsd:string" minOccurs="0"/>
+<xsd:element name="telefono2PersonaGrupo_PGP" type="xsd:string" minOccurs="0"/>
+<xsd:element name="telefono3PersonaGrupo_PGP" type="xsd:string" minOccurs="0"/>
+<xsd:element name="tiempoServicio" type="xsd:string" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="baseDataVO" abstract="true"/>
+<xsd:complexType name="solicitudAmortizacionSaldosServiceDTO">
+<xsd:sequence>
+<xsd:element name="amortizacionSaldosDTO" type="ns0:amortizacionSaldosServiceDTO" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+<xsd:element name="header" type="ns0:headerDTO" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="solicitudFirmarPagaresDTO">
+<xsd:sequence>
+<xsd:element name="header" type="ns0:headerDTO" minOccurs="0"/>
+<xsd:element name="informacionFirmaPagareDTO" type="ns0:informacionFirmaPagareDTO" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="respuestaCrearCertificadoFirmaDTO">
+<xsd:sequence>
+<xsd:element name="codigoError" type="xsd:string" minOccurs="0"/>
+<xsd:element name="descripcion" type="xsd:string" minOccurs="0"/>
+<xsd:element name="exitoso" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="infoCertificadoFirmaDTO" type="ns0:infoCertificadoFirmaDTO" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="solicitudConsultarPagareDTO">
+<xsd:sequence>
+<xsd:element name="consultaPagareServiceDTO" type="ns0:consultaPagareServiceDTO" minOccurs="0"/>
+<xsd:element name="header" type="ns0:headerDTO" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="respuestaFirmarPagaresAsincronoDTO">
+<xsd:sequence>
+<xsd:element name="codigoError" type="xsd:string" minOccurs="0"/>
+<xsd:element name="descripcion" type="xsd:string" minOccurs="0"/>
+<xsd:element name="exitoso" type="xsd:boolean" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="respuestaRadicacionErrorDTO">
+<xsd:sequence>
+<xsd:element name="errores" type="ns0:errorDTO" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+<xsd:element name="valido" type="xsd:boolean"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="solicitudFirmarPagaresConCertificadoDTO">
+<xsd:complexContent>
+<xsd:extension base="ns0:solicitudFirmarPagaresDTO">
+<xsd:sequence>
+<xsd:element name="numeroReferencia" type="xsd:string" minOccurs="0"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="informacionPagareServiceNopdfDTO">
+<xsd:sequence>
+<xsd:element name="estadoPagare" type="xsd:string" minOccurs="0"/>
+<xsd:element name="fechaFirmaPagare" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="fechaGrabacionPagare" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="idEstadoPagare" type="xsd:int" minOccurs="0"/>
+<xsd:element name="idPagareDeceval" type="xsd:int" minOccurs="0"/>
+<xsd:element name="nombreOtorgante" type="xsd:string" minOccurs="0"/>
+<xsd:element name="numPagareEntidad" type="xsd:string" minOccurs="0"/>
+<xsd:element name="numeroDocumentoOtorgante" type="xsd:string" minOccurs="0"/>
+<xsd:element name="tipoDocumentoOtorgante" type="xsd:string" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="documentoPagareServiceDTO">
+<xsd:sequence>
+<xsd:element name="adquisicionVivienda" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="apoderadoCuenta" type="xsd:int" minOccurs="0"/>
+<xsd:element name="apoderadoNumId" type="xsd:string" minOccurs="0"/>
+<xsd:element name="apoderadoTipoId" type="xsd:int" minOccurs="0"/>
+<xsd:element name="archivosAdjuntos" type="ns0:archivoAdjuntoDTO" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+<xsd:element name="autorizaDebitoAutomatico" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="aval" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="baseLiquidacionPlazo" type="xsd:string" minOccurs="0"/>
+<xsd:element name="baseLiquidacionTasa" type="xsd:string" minOccurs="0"/>
+<xsd:element name="ciCEApartirDelMes" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="ciCEPagaderaCada" type="xsd:int" minOccurs="0"/>
+<xsd:element name="ciConCuotasExtras" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="ciConPeriodoGracia" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="ciNumCuotasExtras" type="xsd:int" minOccurs="0"/>
+<xsd:element name="ciValorCuotaExtra" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="ciudadCreacion" type="xsd:string" minOccurs="0"/>
+<xsd:element name="ciudadDesembolso" type="xsd:string" minOccurs="0"/>
+<xsd:element name="codOficina" type="xsd:string" minOccurs="0"/>
+<xsd:element name="construccionViviendaIndividual" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="creditoReembolsableEn" type="xsd:string" minOccurs="0"/>
+<xsd:element name="cuenta" type="xsd:string" minOccurs="0"/>
+<xsd:element name="departamento" type="xsd:string" minOccurs="0"/>
+<xsd:element name="deptoCreacion" type="xsd:string" minOccurs="0"/>
+<xsd:element name="destinoOperacion" type="xsd:string" minOccurs="0"/>
+<xsd:element name="diaPago" type="xsd:int" minOccurs="0"/>
+<xsd:element name="dtfDessembolso" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="dtfEA" type="xsd:string" minOccurs="0"/>
+<xsd:element name="empresaOtorgante" type="xsd:string" minOccurs="0"/>
+<xsd:element name="fechaDesembolso" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="fechaGrabacionPagare" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="fechaPagoPrimerCuota" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="fechaPagoPrimerCuotaCapital" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="fechaPagoPrimerCuotaInteres" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="fechaPagoPrimerCuotaMensual" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="fechaPagoPrimerCuotaSemestral" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="fechaVencimientoFinanciero" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="garantiaAdicional" type="xsd:string" minOccurs="0"/>
+<xsd:element name="idClaseDefinicionDocumento" type="xsd:long" minOccurs="0"/>
+<xsd:element name="idDocumentoPagare" type="xsd:long" minOccurs="0"/>
+<xsd:element name="listaAmortizaciones" type="xsd:string" minOccurs="0"/>
+<xsd:element name="listaApoderadoRepresentantePagare" type="ns0:consultaGiradorServiceDTO" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+<xsd:element name="listaCodeudoresAvalistasPagare" type="ns0:consultaGiradorServiceDTO" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+<xsd:element name="margenRedescuento" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="mejoramientoViviendaInterSoci" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="mensajeRespuesta" type="xsd:string" minOccurs="0"/>
+<xsd:element name="modalidad" type="xsd:string" minOccurs="0"/>
+<xsd:element name="modalidadPagoCapital" type="xsd:string" minOccurs="0"/>
+<xsd:element name="modalidadPagosInteres" type="xsd:string" minOccurs="0"/>
+<xsd:element name="nitEmisor" type="xsd:string" minOccurs="0"/>
+<xsd:element name="noVis" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="numCredito" type="xsd:string" minOccurs="0"/>
+<xsd:element name="numCuotas" type="xsd:int" minOccurs="0"/>
+<xsd:element name="numCuotasLetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="numPagareEntidad" type="xsd:string" minOccurs="0"/>
+<xsd:element name="numReferencia" type="xsd:string" minOccurs="0"/>
+<xsd:element name="numUnidadesUVR" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="numeroPoliza" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="otorganteCuenta" type="xsd:int" minOccurs="0"/>
+<xsd:element name="otorganteNumId" type="xsd:string" minOccurs="0"/>
+<xsd:element name="otorganteTipoId" type="xsd:int" minOccurs="0"/>
+<xsd:element name="otraModalidadPago" type="xsd:string" minOccurs="0"/>
+<xsd:element name="otroDestino" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="pais" type="xsd:string" minOccurs="0"/>
+<xsd:element name="paisCreacion" type="xsd:string" minOccurs="0"/>
+<xsd:element name="periodicidadGracia" type="xsd:string" minOccurs="0"/>
+<xsd:element name="periodicidadMuerto" type="xsd:string" minOccurs="0"/>
+<xsd:element name="periodicidadPlazo" type="xsd:string" minOccurs="0"/>
+<xsd:element name="periodoGracia" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="periodoGraciaDe" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="periodoGraciaHasta" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="periodoGraciaLetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="periodoGraciaNumero" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="periodoMuerto" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="periodoMuertoDe" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="periodoMuertoHasta" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="periodoMuertoLetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="periodoMuertoNumero" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="plazoCreditoDe" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="plazoCreditoHasta" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="plazoLetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="plazoNumero" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="porcentAmortizacionMensual" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="porcentAmortizacionSemestral" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="porcentajeCobertura" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="porcentajeComision" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="puntosPorcentualesRedescuento" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="regional" type="xsd:string" minOccurs="0"/>
+<xsd:element name="seguroVida" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="serialNumero" type="xsd:string" minOccurs="0"/>
+<xsd:element name="spreed" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="sucursal" type="xsd:string" minOccurs="0"/>
+<xsd:element name="tasaInteres" type="xsd:string" minOccurs="0"/>
+<xsd:element name="tasaInteresLetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="tasaInteresMora" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="tasaInteresMoraLetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="tasaInteresRenumEA" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="tasaInteresRenumEALetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="tasaNominal" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="tasaNominalLetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="tasaRedescuento" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="textoAdicional" type="xsd:string" minOccurs="0"/>
+<xsd:element name="tipoPagare" type="xsd:int" minOccurs="0"/>
+<xsd:element name="tipoPoliza" type="xsd:string" minOccurs="0"/>
+<xsd:element name="valorCapitalLetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="valorCapitalNumero" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="valorComisionLetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="valorComisionNumeros" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="valorCuotaPesos" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="valorCuotaPesosLetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="valorCuotaUVR" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="valorCuotaUVRLetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="valorDesembolsoUVRLetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="valorInteresesLetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="valorInteresesMora" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="valorInteresesNumero" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="valorOtrosConceptosLetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="valorOtrosConceptosNumeros" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="valorOtrosSegurosLetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="valorOtrosSegurosNumeros" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="valorPesosActual" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="valorPesosDesembolso" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="valorPesosDesembolsoLetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="valorPesosDiligenciaLetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="valorPesosDiligenciamiento" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="valorSeguroVidaLetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="valorSeguroVidaNumeros" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="vis" type="xsd:boolean" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="respuestaCrearGiradorDaneServiceDTO">
+<xsd:sequence>
+<xsd:element name="codigoError" type="xsd:string" minOccurs="0"/>
+<xsd:element name="descripcion" type="xsd:string" minOccurs="0"/>
+<xsd:element name="exitoso" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="respuesta" type="ns0:crearGiradorDaneServiceDTO" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="consultaGiradorServiceDTO">
+<xsd:sequence>
+<xsd:element name="giradorCuenta" type="xsd:int" minOccurs="0"/>
+<xsd:element name="giradorNumId" type="xsd:string" minOccurs="0"/>
+<xsd:element name="giradorTipoId" type="xsd:int" minOccurs="0"/>
+<xsd:element name="idPersonaRepresentada" type="xsd:long" minOccurs="0"/>
+<xsd:element name="idRol" type="xsd:int" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="amortizacionSaldosServiceDTO">
+<xsd:sequence>
+<xsd:element name="codigoAdministrador_AntCta" type="xsd:string" minOccurs="0"/>
+<xsd:element name="codigoEmisor_AntCta" type="xsd:string" minOccurs="0"/>
+<xsd:element name="codigoISIN_DocPag" type="xsd:string" minOccurs="0"/>
+<xsd:element name="cuentaBeneficiario_DocPag" type="xsd:string" minOccurs="0"/>
+<xsd:element name="exitoso" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="idDocumentoPagare_DocPag" type="xsd:long" minOccurs="0"/>
+<xsd:element name="idUsuarioSession" type="xsd:long" minOccurs="0"/>
+<xsd:element name="mensajeRespuesta" type="xsd:string" minOccurs="0"/>
+<xsd:element name="nombreUsuarioSession" type="xsd:string" minOccurs="0"/>
+<xsd:element name="numPagareEntidad_DocPag" type="xsd:string" minOccurs="0"/>
+<xsd:element name="otrosValores_DetOpe" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="valorAmortizacionCapital_DetOpe" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="valorInteresesCtes_DetOpe" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="valorInteresesMora_DetOpe" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="valorPagado_DetOpe" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="valorSeguro_DetOpe" type="xsd:decimal" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="consultaPagareServiceDTO">
+<xsd:sequence>
+<xsd:element name="codigoDeceval" type="xsd:long" minOccurs="0"/>
+<xsd:element name="idEstadoPagare" type="xsd:int" minOccurs="0"/>
+<xsd:element name="idTipoIdentificacionFirmante" type="xsd:int" minOccurs="0"/>
+<xsd:element name="numIdentificacionFirmante" type="xsd:string" minOccurs="0"/>
+<xsd:element name="numPagareEntidad" type="xsd:string" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="solicitudCrearPagareServiceDTO">
+<xsd:sequence>
+<xsd:element name="documentoPagareServiceDTO" type="ns0:documentoPagareServiceDTO" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+<xsd:element name="header" type="ns0:headerDTO" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="registroFirmarPagaresXmlDTO">
+<xsd:sequence>
+<xsd:element name="header" type="ns0:headerDTO" minOccurs="0"/>
+<xsd:element name="informacionFirmaPagareXmlDTO" type="ns0:informacionFirmaPagareXmlDTO" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="solicitudPagaresFirmadosDTO">
+<xsd:sequence>
+<xsd:element name="header" type="ns0:headerDTO" minOccurs="0"/>
+<xsd:element name="pagaresFirmadosDTO" type="ns0:pagaresFirmadosDTO" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="solicitudCertificadoFirmaPDTO">
+<xsd:sequence>
+<xsd:element name="header" type="ns0:headerDTO" minOccurs="0"/>
+<xsd:element name="infoCertificadoFirmaDTO" type="ns0:infoCertificadoFirmaDTO" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="informacionFirmaPagareCaracteresDTO">
+<xsd:sequence>
+<xsd:element name="OTPPagare" type="xsd:string" minOccurs="0"/>
+<xsd:element name="OTPProcedimiento" type="xsd:string" minOccurs="0"/>
+<xsd:element name="archivosAdjuntos" type="ns0:archivoAdjuntoDTO" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+<xsd:element name="clave" type="xsd:string" minOccurs="0"/>
+<xsd:element name="idDocumentoPagare" type="xsd:long" minOccurs="0"/>
+<xsd:element name="idRolFirmante" type="xsd:long" minOccurs="0"/>
+<xsd:element name="motivo" type="xsd:string" minOccurs="0"/>
+<xsd:element name="numeroDocumento" type="xsd:string" minOccurs="0"/>
+<xsd:element name="tipoDocumento" type="xsd:int" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="solicitudAnulacionPagaresDTO">
+<xsd:sequence>
+<xsd:element name="codigoDeceval" type="xsd:int" minOccurs="0"/>
+<xsd:element name="header" type="ns0:headerDTO" minOccurs="0"/>
+<xsd:element name="motivoAnulacion" type="xsd:string" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="representanteLegalServiceDTO">
+<xsd:sequence>
+<xsd:element name="cuenta" type="xsd:int" minOccurs="0"/>
+<xsd:element name="idTipoRepresentante" type="xsd:int" minOccurs="0"/>
+<xsd:element name="numIdentificacion" type="xsd:string" minOccurs="0"/>
+<xsd:element name="tipoIdentificacion" type="xsd:int" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="respuestaAmortizacionSaldosServiceDTO">
+<xsd:sequence>
+<xsd:element name="codigoError" type="xsd:string" minOccurs="0"/>
+<xsd:element name="descripcion" type="xsd:string" minOccurs="0"/>
+<xsd:element name="exitoso" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="listaRespusta" type="ns0:amortizacionSaldosServiceDTO" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="respuestaConsultarPagaresDTO">
+<xsd:sequence>
+<xsd:element name="codigoError" type="xsd:string" minOccurs="0"/>
+<xsd:element name="descripcion" type="xsd:string" minOccurs="0"/>
+<xsd:element name="exitoso" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="listaRespuesta" type="ns0:informacionPagareServiceDTO" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="respuestaDesembolsoAnotarCuentaDTO">
+<xsd:sequence>
+<xsd:element name="codigoError" type="xsd:string" minOccurs="0"/>
+<xsd:element name="descripcion" type="xsd:string" minOccurs="0"/>
+<xsd:element name="exitoso" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="listaRespusta" type="ns0:desembolsoAnotarCuentaDTO" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="respuestaFirmarPagaresXmlDTO">
+<xsd:sequence>
+<xsd:element name="codigoError" type="xsd:string" minOccurs="0"/>
+<xsd:element name="descripcion" type="xsd:string" minOccurs="0"/>
+<xsd:element name="exitoso" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="infoXmlList" type="ns0:informacionFirmaPagareXmlDTO" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="respuestaConsultaPagareXMLServiceDTO">
+<xsd:sequence>
+<xsd:element name="codigoError" type="xsd:string" minOccurs="0"/>
+<xsd:element name="descripcion" type="xsd:string" minOccurs="0"/>
+<xsd:element name="exitoso" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="fechaGrabacionPagare" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="idPagareDeceval" type="xsd:int" minOccurs="0"/>
+<xsd:element name="listaRespuesta" type="ns0:informacionPagareXmlServiceDTO" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+<xsd:element name="nombreEstadoPagare" type="xsd:string" minOccurs="0"/>
+<xsd:element name="nombreOtorgante" type="xsd:string" minOccurs="0"/>
+<xsd:element name="numIdentificacionOtorgante" type="xsd:string" minOccurs="0"/>
+<xsd:element name="numPagareEntidad" type="xsd:string" minOccurs="0"/>
+<xsd:element name="rolfirmante" type="xsd:int" minOccurs="0"/>
+<xsd:element name="xmlPagare" type="xsd:string" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="informacionFirmaPagareDTO">
+<xsd:sequence>
+<xsd:element name="OTPPagare" type="xsd:string" minOccurs="0"/>
+<xsd:element name="OTPProcedimiento" type="xsd:string" minOccurs="0"/>
+<xsd:element name="archivosAdjuntos" type="ns0:archivoAdjuntoDTO" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+<xsd:element name="clave" type="xsd:string" minOccurs="0"/>
+<xsd:element name="idDocumentoPagare" type="xsd:long" minOccurs="0"/>
+<xsd:element name="idRolFirmante" type="xsd:long" minOccurs="0"/>
+<xsd:element name="motivo" type="xsd:string" minOccurs="0"/>
+<xsd:element name="numeroDocumento" type="xsd:string" minOccurs="0"/>
+<xsd:element name="tipoDocumento" type="xsd:int" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="documentoPagareDaneServiceDTO">
+<xsd:sequence>
+<xsd:element name="adquisicionVivienda" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="apoderadoCuenta" type="xsd:int" minOccurs="0"/>
+<xsd:element name="apoderadoNumId" type="xsd:string" minOccurs="0"/>
+<xsd:element name="apoderadoTipoId" type="xsd:int" minOccurs="0"/>
+<xsd:element name="archivosAdjuntos" type="ns0:archivoAdjuntoDTO" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+<xsd:element name="autorizaDebitoAutomatico" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="aval" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="baseLiquidacionPlazo" type="xsd:string" minOccurs="0"/>
+<xsd:element name="baseLiquidacionTasa" type="xsd:string" minOccurs="0"/>
+<xsd:element name="ciCEApartirDelMes" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="ciCEPagaderaCada" type="xsd:int" minOccurs="0"/>
+<xsd:element name="ciConCuotasExtras" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="ciConPeriodoGracia" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="ciNumCuotasExtras" type="xsd:int" minOccurs="0"/>
+<xsd:element name="ciValorCuotaExtra" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="ciudadCreacion" type="xsd:string" minOccurs="0"/>
+<xsd:element name="ciudadDesembolso" type="xsd:string" minOccurs="0"/>
+<xsd:element name="codOficina" type="xsd:string" minOccurs="0"/>
+<xsd:element name="codigoGeoreferenciacion" type="xsd:string" minOccurs="0"/>
+<xsd:element name="construccionViviendaIndividual" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="creditoReembolsableEn" type="xsd:string" minOccurs="0"/>
+<xsd:element name="cuenta" type="xsd:string" minOccurs="0"/>
+<xsd:element name="departamento" type="xsd:string" minOccurs="0"/>
+<xsd:element name="deptoCreacion" type="xsd:string" minOccurs="0"/>
+<xsd:element name="destinoOperacion" type="xsd:string" minOccurs="0"/>
+<xsd:element name="diaPago" type="xsd:int" minOccurs="0"/>
+<xsd:element name="dtfDessembolso" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="dtfEA" type="xsd:string" minOccurs="0"/>
+<xsd:element name="empresaOtorgante" type="xsd:string" minOccurs="0"/>
+<xsd:element name="fechaDesembolso" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="fechaFirmaFisico" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="fechaGrabacionPagare" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="fechaPagoPrimerCuota" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="fechaPagoPrimerCuotaCapital" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="fechaPagoPrimerCuotaInteres" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="fechaPagoPrimerCuotaMensual" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="fechaPagoPrimerCuotaSemestral" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="fechaVencimientoFinanciero" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="garantiaAdicional" type="xsd:string" minOccurs="0"/>
+<xsd:element name="idClaseDefinicionDocumento" type="xsd:long" minOccurs="0"/>
+<xsd:element name="idDocumentoPagare" type="xsd:long" minOccurs="0"/>
+<xsd:element name="idGestorDocumental" type="xsd:string" minOccurs="0"/>
+<xsd:element name="listaAmortizaciones" type="xsd:string" minOccurs="0"/>
+<xsd:element name="listaApoderadoRepresentantePagare" type="ns0:consultaGiradorServiceDTO" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+<xsd:element name="listaCodeudoresAvalistasPagare" type="ns0:consultaGiradorServiceDTO" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+<xsd:element name="margenRedescuento" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="mejoramientoViviendaInterSoci" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="mensajeRespuesta" type="xsd:string" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+<xsd:element name="modalidad" type="xsd:string" minOccurs="0"/>
+<xsd:element name="modalidadPagoCapital" type="xsd:string" minOccurs="0"/>
+<xsd:element name="modalidadPagosInteres" type="xsd:string" minOccurs="0"/>
+<xsd:element name="nitEmisor" type="xsd:string" minOccurs="0"/>
+<xsd:element name="noVis" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="numCredito" type="xsd:string" minOccurs="0"/>
+<xsd:element name="numCuotas" type="xsd:int" minOccurs="0"/>
+<xsd:element name="numCuotasLetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="numPagareEntidad" type="xsd:string" minOccurs="0"/>
+<xsd:element name="numReferencia" type="xsd:string" minOccurs="0"/>
+<xsd:element name="numUnidadesUVR" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="numeroPoliza" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="otorganteCuenta" type="xsd:int" minOccurs="0"/>
+<xsd:element name="otorganteNumId" type="xsd:string" minOccurs="0"/>
+<xsd:element name="otorganteTipoId" type="xsd:int" minOccurs="0"/>
+<xsd:element name="otraModalidadPago" type="xsd:string" minOccurs="0"/>
+<xsd:element name="otroDestino" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="pais" type="xsd:string" minOccurs="0"/>
+<xsd:element name="paisCreacion" type="xsd:string" minOccurs="0"/>
+<xsd:element name="periodicidadGracia" type="xsd:string" minOccurs="0"/>
+<xsd:element name="periodicidadMuerto" type="xsd:string" minOccurs="0"/>
+<xsd:element name="periodicidadPlazo" type="xsd:string" minOccurs="0"/>
+<xsd:element name="periodoGracia" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="periodoGraciaDe" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="periodoGraciaHasta" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="periodoGraciaLetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="periodoGraciaNumero" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="periodoMuerto" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="periodoMuertoDe" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="periodoMuertoHasta" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="periodoMuertoLetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="periodoMuertoNumero" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="plazoCreditoDe" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="plazoCreditoHasta" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="plazoLetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="plazoNumero" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="porcentAmortizacionMensual" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="porcentAmortizacionSemestral" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="porcentajeCobertura" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="porcentajeComision" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="puntosPorcentualesRedescuento" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="regional" type="xsd:string" minOccurs="0"/>
+<xsd:element name="seguroVida" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="serialNumero" type="xsd:string" minOccurs="0"/>
+<xsd:element name="spreed" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="sucursal" type="xsd:string" minOccurs="0"/>
+<xsd:element name="tasaInteres" type="xsd:string" minOccurs="0"/>
+<xsd:element name="tasaInteresLetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="tasaInteresMora" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="tasaInteresMoraLetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="tasaInteresRenumEA" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="tasaInteresRenumEALetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="tasaNominal" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="tasaNominalLetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="tasaRedescuento" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="textoAdicional" type="xsd:string" minOccurs="0"/>
+<xsd:element name="tipoPagare" type="xsd:int" minOccurs="0"/>
+<xsd:element name="tipoPoliza" type="xsd:string" minOccurs="0"/>
+<xsd:element name="valorCapitalLetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="valorCapitalNumero" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="valorComisionLetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="valorComisionNumeros" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="valorCuotaPesos" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="valorCuotaPesosLetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="valorCuotaUVR" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="valorCuotaUVRLetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="valorDesembolsoUVRLetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="valorInteresesLetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="valorInteresesMora" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="valorInteresesNumero" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="valorOtrosConceptosLetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="valorOtrosConceptosNumeros" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="valorOtrosSegurosLetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="valorOtrosSegurosNumeros" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="valorPesosActual" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="valorPesosDesembolso" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="valorPesosDesembolsoLetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="valorPesosDiligenciaLetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="valorPesosDiligenciamiento" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="valorSeguroVidaLetras" type="xsd:string" minOccurs="0"/>
+<xsd:element name="valorSeguroVidaNumeros" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="vis" type="xsd:boolean" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="cambioEstadoPagareDTO">
+<xsd:sequence>
+<xsd:element name="header" type="ns0:headerDTO" minOccurs="0"/>
+<xsd:element name="idDocumentoPagare" type="xsd:long" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="infoCertificadoFirmaDTO">
+<xsd:sequence>
+<xsd:element name="celular" type="xsd:string" minOccurs="0"/>
+<xsd:element name="clave" type="xsd:string" minOccurs="0"/>
+<xsd:element name="correoElectronico" type="xsd:string" minOccurs="0"/>
+<xsd:element name="idDocumentoPagare" type="xsd:long" minOccurs="0"/>
+<xsd:element name="idRolFirmante" type="xsd:long" minOccurs="0"/>
+<xsd:element name="numeroDocumento" type="xsd:string" minOccurs="0"/>
+<xsd:element name="numeroReferencia" type="xsd:string" minOccurs="0"/>
+<xsd:element name="tipoDocumento" type="xsd:int" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="radicacionSolicitudRequestNatural">
+<xsd:sequence>
+<xsd:element name="archivosAdjuntos" type="ns0:archivoAdjuntoSolicitudVO" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+<xsd:element name="ciudad" type="xsd:int" minOccurs="0"/>
+<xsd:element name="ciudadDomicilio" type="xsd:int" minOccurs="0"/>
+<xsd:element name="ciudadSolicitud" type="xsd:int" minOccurs="0"/>
+<xsd:element name="depto" type="xsd:int" minOccurs="0"/>
+<xsd:element name="deptoDomicilio" type="xsd:int" minOccurs="0"/>
+<xsd:element name="descripcionSolicitud" type="xsd:string" minOccurs="0"/>
+<xsd:element name="fechaExpedicion" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="fechaNacimiento" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="fkIdTipoDocumentoGirador" type="xsd:int" minOccurs="0"/>
+<xsd:element name="header" type="ns0:headerDTO" minOccurs="0"/>
+<xsd:element name="nombres" type="xsd:string" minOccurs="0"/>
+<xsd:element name="novedad" type="xsd:string" minOccurs="0"/>
+<xsd:element name="numeroDocumento" type="xsd:string" minOccurs="0"/>
+<xsd:element name="numeroDocumentoOriginal" type="xsd:string" minOccurs="0"/>
+<xsd:element name="pais" type="xsd:int" minOccurs="0"/>
+<xsd:element name="paisDomicilio" type="xsd:int" minOccurs="0"/>
+<xsd:element name="paisNacionalidad" type="xsd:int" minOccurs="0"/>
+<xsd:element name="primerApellido" type="xsd:string" minOccurs="0"/>
+<xsd:element name="tipoDocumentoOriginal" type="xsd:int" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="respuestaFirmarPagaresCodigoErrorDTO">
+<xsd:sequence>
+<xsd:element name="codigoError" type="xsd:string" minOccurs="0"/>
+<xsd:element name="descripcion" type="xsd:string" minOccurs="0"/>
+<xsd:element name="exitoso" type="xsd:boolean" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="entradasGeneracionMasivaCertificadosDTO">
+<xsd:sequence>
+<xsd:element name="codigoDeceval" type="xsd:string" minOccurs="0"/>
+<xsd:element name="noPagareDeceval" type="xsd:string" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="respuestaConsultarPagaresNopdfDTO">
+<xsd:sequence>
+<xsd:element name="codigoError" type="xsd:string" minOccurs="0"/>
+<xsd:element name="descripcion" type="xsd:string" minOccurs="0"/>
+<xsd:element name="exitoso" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="listaRespuesta" type="ns0:informacionPagareServiceNopdfDTO" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="cancelacionPagaresServiceDTO">
+<xsd:sequence>
+<xsd:element name="codigoAdministrador_AntCta" type="xsd:string" minOccurs="0"/>
+<xsd:element name="codigoEmisor_AntCta" type="xsd:string" minOccurs="0"/>
+<xsd:element name="codigoISIN_DocPag" type="xsd:string" minOccurs="0"/>
+<xsd:element name="cuentaBeneficiario_DocPag" type="xsd:string" minOccurs="0"/>
+<xsd:element name="exitoso" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="idDocumentoPagare_DocPag" type="xsd:long" minOccurs="0"/>
+<xsd:element name="idUsuarioSession" type="xsd:long" minOccurs="0"/>
+<xsd:element name="mensajeRespuesta" type="xsd:string" minOccurs="0"/>
+<xsd:element name="nombreUsuarioSession" type="xsd:string" minOccurs="0"/>
+<xsd:element name="numPagareEntidad_DocPag" type="xsd:string" minOccurs="0"/>
+<xsd:element name="otrosValores_DetOpe" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="valorAmortizacionCapital_DetOpe" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="valorInteresesCtes_DetOpe" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="valorInteresesMora_DetOpe" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="valorPagado_DetOpe" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="valorSeguro_DetOpe" type="xsd:decimal" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="headerDTO">
+<xsd:sequence>
+<xsd:element name="codigoDepositante" type="xsd:int" minOccurs="0"/>
+<xsd:element name="fecha" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="hora" type="xsd:string" minOccurs="0"/>
+<xsd:element name="usuario" type="xsd:string" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="errorDTO">
+<xsd:sequence>
+<xsd:element name="codigo" type="xsd:string" minOccurs="0"/>
+<xsd:element name="error" type="xsd:string" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="desembolsoAnotarCuentaDTO">
+<xsd:sequence>
+<xsd:element name="idDocumentoPagare" type="xsd:long" minOccurs="0"/>
+<xsd:element name="identificacionEmisor" type="xsd:string" minOccurs="0"/>
+<xsd:element name="mensajeRespuesta" type="xsd:string" minOccurs="0"/>
+<xsd:element name="numPagareEntidad" type="xsd:string" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="registrarAmortizacion" type="ns0:solicitudAmortizacionSaldosServiceDTO" nillable="true"/>
+<xsd:element name="consultaPagareXML" type="ns0:solicitudConsultaPagareServiceXMLDTO" nillable="true"/>
+<xsd:element name="CreacionGiradoresCodificados" type="ns0:solicitudCrearGiradorDaneServiceDTO" nillable="true"/>
+<xsd:element name="RespuestaFirmarPagaresDTO" type="ns0:respuestaFirmarPagaresDTO" nillable="true"/>
+<xsd:element name="RespuestaFirmarPagaresXmlDTO" type="ns0:respuestaFirmarPagaresXmlDTO" nillable="true"/>
+<xsd:element name="RespuestaDocumentoPagareDaneServiceDTO" type="ns0:respuestaDocumentoPagareDaneServiceDTO" nillable="true"/>
+<xsd:element name="registrarCustodiaPagare" type="ns0:registroFirmarPagaresXmlDTO" nillable="true"/>
+<xsd:element name="firmarPagareConCertificado" type="ns0:solicitudFirmarPagaresConCertificadoDTO" nillable="true"/>
+<xsd:element name="CreacionPagaresCodificado" type="ns0:solicitudCrearPagareDaneServiceDTO" nillable="true"/>
+<xsd:element name="crearCertificadoFirma" type="ns0:solicitudCertificadoFirmaPDTO" nillable="true"/>
+<xsd:element name="RespuestaCrearGiradorDaneServiceDTO" type="ns0:respuestaCrearGiradorDaneServiceDTO" nillable="true"/>
+<xsd:element name="firmarPagaresAsincrono" type="ns0:solicitudFirmarPagaresDTO" nillable="true"/>
+<xsd:element name="anulacionPagares" type="ns0:solicitudAnulacionPagaresDTO" nillable="true"/>
+<xsd:element name="RespuestaConsultarPagaresNopdfDTO" type="ns0:respuestaConsultarPagaresNopdfDTO" nillable="true"/>
+<xsd:element name="RespuestaCrearGiradorServiceDTO" type="ns0:respuestaCrearGiradorServiceDTO" nillable="true"/>
+<xsd:element name="consultarPagaresNopdf" type="ns0:solicitudConsultarPagareDTO" nillable="true"/>
+<xsd:element name="RespuestaRadicacionErrorDTO" type="ns0:respuestaRadicacionErrorDTO" nillable="true"/>
+<xsd:element name="RespuestaGeneracionMasivaCertificadosDTO" type="ns0:respuestaGeneracionMasivaCertificadosDTO" nillable="true"/>
+<xsd:element name="RespuestaCancelacionPagaresServiceDTO" type="ns0:respuestaCancelacionPagaresServiceDTO" nillable="true"/>
+<xsd:element name="RespuestaCambiarEstadoProvisionalADefinitivoDTO" type="ns0:respuestaCambiarEstadoProvisionalADefinitivoDTO" nillable="true"/>
+<xsd:element name="RespuestaAnulacionPagaresDTO" type="ns0:respuestaAnulacionPagaresDTO" nillable="true"/>
+<xsd:element name="notificacionPagaresFirmados" type="ns0:solicitudPagaresFirmadosDTO" nillable="true"/>
+<xsd:element name="generacionMasivaCertificados" type="ns0:solicitudGeneracionMasivaCertificadosDTO" nillable="true"/>
+<xsd:element name="consultarPagares" type="ns0:solicitudConsultarPagareDTO" nillable="true"/>
+<xsd:element name="cancelacionPagares" type="ns0:solicitudCancelacionPagaresServiceDTO" nillable="true"/>
+<xsd:element name="RespuestaDesembolsoAnotarCuentaDTO" type="ns0:respuestaDesembolsoAnotarCuentaDTO" nillable="true"/>
+<xsd:element name="RespuestaConsultarPagaresDTO" type="ns0:respuestaConsultarPagaresDTO" nillable="true"/>
+<xsd:element name="RespuestaFirmarPagaresAsincronoDTO" type="ns0:respuestaFirmarPagaresAsincronoDTO" nillable="true"/>
+<xsd:element name="RespuestaCrearCertificadoFirmaDTO" type="ns0:respuestaCrearCertificadoFirmaDTO" nillable="true"/>
+<xsd:element name="creacionPagaresFisicosCodificado" type="ns0:solicitudCrearPagareDaneServiceDTO" nillable="true"/>
+<xsd:element name="CreacionGiradores" type="ns0:solicitudCrearGiradorServiceDTO" nillable="true"/>
+<xsd:element name="notificacionDesembolsoAnotacionEnCuenta" type="ns0:solicitudDesembolsoAnotarCuentaDTO" nillable="true"/>
+<xsd:element name="cambiarEstadoProvisionalADefinitivo" type="ns0:cambioEstadoPagareDTO" nillable="true"/>
+<xsd:element name="RespuestaFirmarPagaresCodigoErrorDTO" type="ns0:respuestaFirmarPagaresCodigoErrorDTO" nillable="true"/>
+<xsd:element name="RespuestaDocumentoPagareServiceDTO" type="ns0:respuestaDocumentoPagareServiceDTO" nillable="true"/>
+<xsd:element name="RespuestaConsultaPagareXMLServiceDTO" type="ns0:respuestaConsultaPagareXMLServiceDTO" nillable="true"/>
+<xsd:element name="firmarPagareCaracteres" type="ns0:solicitudFirmarPagaresCaracteresDTO" nillable="true"/>
+<xsd:element name="solicitudRadicacionFichaTecnicaNatural" type="ns0:radicacionSolicitudRequestNatural" nillable="true"/>
+<xsd:element name="creacionPagares" type="ns0:solicitudCrearPagareServiceDTO" nillable="true"/>
+<xsd:element name="firmarPagares" type="ns0:solicitudFirmarPagaresDTO" nillable="true"/>
+<xsd:element name="RespuestaAmortizacionSaldosServiceDTO" type="ns0:respuestaAmortizacionSaldosServiceDTO" nillable="true"/>
+<xsd:element name="RespuestaPagaresFirmadosDTO" type="ns0:respuestaPagaresFirmadosDTO" nillable="true"/>
+</xsd:schema>

@@ -1,0 +1,1074 @@
+<xs:schema xmlns:tns="http://deceval.com/sdl/services/" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://deceval.com/sdl/services/" version="1.0">
+
+    <xs:element name="CreacionGiradores" type="tns:solicitudCrearGiradorServiceDTO"/>
+
+    <xs:element name="CreacionGiradoresCodificados" type="tns:solicitudCrearGiradorDaneServiceDTO"/>
+
+    <xs:element name="CreacionPagaresCodificado" type="tns:solicitudCrearPagareDaneServiceDTO"/>
+
+    <xs:element name="RespuestaAmortizacionSaldosServiceDTO" type="tns:respuestaAmortizacionSaldosServiceDTO"/>
+
+    <xs:element name="RespuestaAnulacionPagaresDTO" type="tns:respuestaAnulacionPagaresDTO"/>
+
+    <xs:element name="RespuestaCambiarEstadoProvisionalADefinitivoDTO"
+                type="tns:respuestaCambiarEstadoProvisionalADefinitivoDTO"/>
+
+    <xs:element name="RespuestaCancelacionPagaresServiceDTO" type="tns:respuestaCancelacionPagaresServiceDTO"/>
+
+    <xs:element name="RespuestaConsultaPagareXMLServiceDTO" type="tns:respuestaConsultaPagareXMLServiceDTO"/>
+
+    <xs:element name="RespuestaConsultarPagaresDTO" type="tns:respuestaConsultarPagaresDTO"/>
+
+    <xs:element name="RespuestaConsultarPagaresNopdfDTO" type="tns:respuestaConsultarPagaresNopdfDTO"/>
+
+    <xs:element name="RespuestaCrearCertificadoFirmaDTO" type="tns:respuestaCrearCertificadoFirmaDTO"/>
+
+    <xs:element name="RespuestaCrearGiradorDaneServiceDTO" type="tns:respuestaCrearGiradorDaneServiceDTO"/>
+
+    <xs:element name="RespuestaCrearGiradorServiceDTO" type="tns:respuestaCrearGiradorServiceDTO"/>
+
+    <xs:element name="RespuestaDesembolsoAnotarCuentaDTO" type="tns:respuestaDesembolsoAnotarCuentaDTO"/>
+
+    <xs:element name="RespuestaDocumentoPagareDaneServiceDTO" type="tns:respuestaDocumentoPagareDaneServiceDTO"/>
+
+    <xs:element name="RespuestaDocumentoPagareServiceDTO" type="tns:respuestaDocumentoPagareServiceDTO"/>
+
+    <xs:element name="RespuestaFirmarPagaresAsincronoDTO" type="tns:respuestaFirmarPagaresAsincronoDTO"/>
+
+    <xs:element name="RespuestaFirmarPagaresCodigoErrorDTO" type="tns:respuestaFirmarPagaresCodigoErrorDTO"/>
+
+    <xs:element name="RespuestaFirmarPagaresDTO" type="tns:respuestaFirmarPagaresDTO"/>
+
+    <xs:element name="RespuestaFirmarPagaresXmlDTO" type="tns:respuestaFirmarPagaresXmlDTO"/>
+
+    <xs:element name="RespuestaGeneracionMasivaCertificadosDTO" type="tns:respuestaGeneracionMasivaCertificadosDTO"/>
+
+    <xs:element name="RespuestaPagaresFirmadosDTO" type="tns:respuestaPagaresFirmadosDTO"/>
+
+    <xs:element name="RespuestaRadicacionErrorDTO" type="tns:respuestaRadicacionErrorDTO"/>
+
+    <xs:element name="anulacionPagares" type="tns:solicitudAnulacionPagaresDTO"/>
+
+    <xs:element name="cambiarEstadoProvisionalADefinitivo" type="tns:cambioEstadoPagareDTO"/>
+
+    <xs:element name="cancelacionPagares" type="tns:solicitudCancelacionPagaresServiceDTO"/>
+
+    <xs:element name="consultaPagareXML" type="tns:solicitudConsultaPagareServiceXMLDTO"/>
+
+    <xs:element name="consultarPagares" type="tns:solicitudConsultarPagareDTO"/>
+
+    <xs:element name="consultarPagaresNopdf" type="tns:solicitudConsultarPagareDTO"/>
+
+    <xs:element name="creacionPagares" type="tns:solicitudCrearPagareServiceDTO"/>
+
+    <xs:element name="creacionPagaresFisicosCodificado" type="tns:solicitudCrearPagareDaneServiceDTO"/>
+
+    <xs:element name="crearCertificadoFirma" type="tns:solicitudCertificadoFirmaPDTO"/>
+
+    <xs:element name="firmarPagareCaracteres" type="tns:solicitudFirmarPagaresCaracteresDTO"/>
+
+    <xs:element name="firmarPagareConCertificado" type="tns:solicitudFirmarPagaresConCertificadoDTO"/>
+
+    <xs:element name="firmarPagares" type="tns:solicitudFirmarPagaresDTO"/>
+
+    <xs:element name="firmarPagaresAsincrono" type="tns:solicitudFirmarPagaresDTO"/>
+
+    <xs:element name="generacionMasivaCertificados" type="tns:solicitudGeneracionMasivaCertificadosDTO"/>
+
+    <xs:element name="notificacionDesembolsoAnotacionEnCuenta" type="tns:solicitudDesembolsoAnotarCuentaDTO"/>
+
+    <xs:element name="notificacionPagaresFirmados" type="tns:solicitudPagaresFirmadosDTO"/>
+
+    <xs:element name="registrarAmortizacion" type="tns:solicitudAmortizacionSaldosServiceDTO"/>
+
+    <xs:element name="registrarCustodiaPagare" type="tns:registroFirmarPagaresXmlDTO"/>
+
+    <xs:element name="solicitudRadicacionFichaTecnicaNatural" type="tns:radicacionSolicitudRequestNatural"/>
+
+    <xs:complexType name="solicitudCertificadoFirmaPDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="header" type="tns:headerDTO"/>
+            <xs:element minOccurs="0" name="infoCertificadoFirmaDTO" type="tns:infoCertificadoFirmaDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="headerDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="codigoDepositante" type="xs:int"/>
+            <xs:element minOccurs="0" name="fecha" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="hora" type="xs:string"/>
+            <xs:element minOccurs="0" name="usuario" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="infoCertificadoFirmaDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="celular" type="xs:string"/>
+            <xs:element minOccurs="0" name="clave" type="xs:string"/>
+            <xs:element minOccurs="0" name="correoElectronico" type="xs:string"/>
+            <xs:element minOccurs="0" name="idDocumentoPagare" type="xs:long"/>
+            <xs:element minOccurs="0" name="idRolFirmante" type="xs:long"/>
+            <xs:element minOccurs="0" name="numeroDocumento" type="xs:string"/>
+            <xs:element minOccurs="0" name="numeroReferencia" type="xs:string"/>
+            <xs:element minOccurs="0" name="tipoDocumento" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="respuestaCrearCertificadoFirmaDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="codigoError" type="xs:string"/>
+            <xs:element minOccurs="0" name="descripcion" type="xs:string"/>
+            <xs:element minOccurs="0" name="exitoso" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="infoCertificadoFirmaDTO" type="tns:infoCertificadoFirmaDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="solicitudCancelacionPagaresServiceDTO">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="cancelacionPagaresDTO" nillable="true"
+                        type="tns:cancelacionPagaresServiceDTO"/>
+            <xs:element minOccurs="0" name="header" type="tns:headerDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="cancelacionPagaresServiceDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="codigoAdministrador_AntCta" type="xs:string"/>
+            <xs:element minOccurs="0" name="codigoEmisor_AntCta" type="xs:string"/>
+            <xs:element minOccurs="0" name="codigoISIN_DocPag" type="xs:string"/>
+            <xs:element minOccurs="0" name="cuentaBeneficiario_DocPag" type="xs:string"/>
+            <xs:element minOccurs="0" name="exitoso" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="idDocumentoPagare_DocPag" type="xs:long"/>
+            <xs:element minOccurs="0" name="idUsuarioSession" type="xs:long"/>
+            <xs:element minOccurs="0" name="mensajeRespuesta" type="xs:string"/>
+            <xs:element minOccurs="0" name="nombreUsuarioSession" type="xs:string"/>
+            <xs:element minOccurs="0" name="numPagareEntidad_DocPag" type="xs:string"/>
+            <xs:element minOccurs="0" name="otrosValores_DetOpe" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="valorAmortizacionCapital_DetOpe" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="valorInteresesCtes_DetOpe" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="valorInteresesMora_DetOpe" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="valorPagado_DetOpe" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="valorSeguro_DetOpe" type="xs:decimal"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="respuestaCancelacionPagaresServiceDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="codigoError" type="xs:string"/>
+            <xs:element minOccurs="0" name="descripcion" type="xs:string"/>
+            <xs:element minOccurs="0" name="exitoso" type="xs:boolean"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="listaRespusta" nillable="true"
+                        type="tns:cancelacionPagaresServiceDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="solicitudPagaresFirmadosDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="header" type="tns:headerDTO"/>
+            <xs:element minOccurs="0" name="pagaresFirmadosDTO" type="tns:pagaresFirmadosDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="pagaresFirmadosDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="idDocumentoPagare" type="xs:long"/>
+            <xs:element minOccurs="0" name="identificacionEmisor" type="xs:string"/>
+            <xs:element minOccurs="0" name="mensajeRespuesta" type="xs:string"/>
+            <xs:element minOccurs="0" name="numPagareEntidad" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="respuestaPagaresFirmadosDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="codigoError" type="xs:string"/>
+            <xs:element minOccurs="0" name="descripcion" type="xs:string"/>
+            <xs:element minOccurs="0" name="exitoso" type="xs:boolean"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="listaRespusta" nillable="true"
+                        type="tns:pagaresFirmadosDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="solicitudCrearPagareDaneServiceDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="documentoPagareServiceDTO" type="tns:documentoPagareDaneServiceDTO"/>
+            <xs:element minOccurs="0" name="header" type="tns:headerDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="documentoPagareDaneServiceDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="adquisicionVivienda" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="apoderadoCuenta" type="xs:int"/>
+            <xs:element minOccurs="0" name="apoderadoNumId" type="xs:string"/>
+            <xs:element minOccurs="0" name="apoderadoTipoId" type="xs:int"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="archivosAdjuntos" nillable="true"
+                        type="tns:archivoAdjuntoDTO"/>
+            <xs:element minOccurs="0" name="autorizaDebitoAutomatico" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="aval" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="baseLiquidacionPlazo" type="xs:string"/>
+            <xs:element minOccurs="0" name="baseLiquidacionTasa" type="xs:string"/>
+            <xs:element minOccurs="0" name="ciCEApartirDelMes" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="ciCEPagaderaCada" type="xs:int"/>
+            <xs:element minOccurs="0" name="ciConCuotasExtras" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="ciConPeriodoGracia" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="ciNumCuotasExtras" type="xs:int"/>
+            <xs:element minOccurs="0" name="ciValorCuotaExtra" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="ciudadCreacion" type="xs:string"/>
+            <xs:element minOccurs="0" name="ciudadDesembolso" type="xs:string"/>
+            <xs:element minOccurs="0" name="codOficina" type="xs:string"/>
+            <xs:element minOccurs="0" name="codigoGeoreferenciacion" type="xs:string"/>
+            <xs:element minOccurs="0" name="construccionViviendaIndividual" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="creditoReembolsableEn" type="xs:string"/>
+            <xs:element minOccurs="0" name="cuenta" type="xs:string"/>
+            <xs:element minOccurs="0" name="departamento" type="xs:string"/>
+            <xs:element minOccurs="0" name="deptoCreacion" type="xs:string"/>
+            <xs:element minOccurs="0" name="destinoOperacion" type="xs:string"/>
+            <xs:element minOccurs="0" name="diaPago" type="xs:int"/>
+            <xs:element minOccurs="0" name="dtfDessembolso" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="dtfEA" type="xs:string"/>
+            <xs:element minOccurs="0" name="empresaOtorgante" type="xs:string"/>
+            <xs:element minOccurs="0" name="fechaDesembolso" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="fechaFirmaFisico" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="fechaGrabacionPagare" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="fechaPagoPrimerCuota" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="fechaPagoPrimerCuotaCapital" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="fechaPagoPrimerCuotaInteres" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="fechaPagoPrimerCuotaMensual" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="fechaPagoPrimerCuotaSemestral" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="fechaVencimientoFinanciero" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="garantiaAdicional" type="xs:string"/>
+            <xs:element minOccurs="0" name="idClaseDefinicionDocumento" type="xs:long"/>
+            <xs:element minOccurs="0" name="idDocumentoPagare" type="xs:long"/>
+            <xs:element minOccurs="0" name="idGestorDocumental" type="xs:string"/>
+            <xs:element minOccurs="0" name="listaAmortizaciones" type="xs:string"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="listaApoderadoRepresentantePagare" nillable="true"
+                        type="tns:consultaGiradorServiceDTO"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="listaCodeudoresAvalistasPagare" nillable="true"
+                        type="tns:consultaGiradorServiceDTO"/>
+            <xs:element minOccurs="0" name="margenRedescuento" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="mejoramientoViviendaInterSoci" type="xs:boolean"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="mensajeRespuesta" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="modalidad" type="xs:string"/>
+            <xs:element minOccurs="0" name="modalidadPagoCapital" type="xs:string"/>
+            <xs:element minOccurs="0" name="modalidadPagosInteres" type="xs:string"/>
+            <xs:element minOccurs="0" name="nitEmisor" type="xs:string"/>
+            <xs:element minOccurs="0" name="noVis" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="numCredito" type="xs:string"/>
+            <xs:element minOccurs="0" name="numCuotas" type="xs:int"/>
+            <xs:element minOccurs="0" name="numCuotasLetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="numPagareEntidad" type="xs:string"/>
+            <xs:element minOccurs="0" name="numReferencia" type="xs:string"/>
+            <xs:element minOccurs="0" name="numUnidadesUVR" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="numeroPoliza" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="otorganteCuenta" type="xs:int"/>
+            <xs:element minOccurs="0" name="otorganteNumId" type="xs:string"/>
+            <xs:element minOccurs="0" name="otorganteTipoId" type="xs:int"/>
+            <xs:element minOccurs="0" name="otraModalidadPago" type="xs:string"/>
+            <xs:element minOccurs="0" name="otroDestino" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="pais" type="xs:string"/>
+            <xs:element minOccurs="0" name="paisCreacion" type="xs:string"/>
+            <xs:element minOccurs="0" name="periodicidadGracia" type="xs:string"/>
+            <xs:element minOccurs="0" name="periodicidadMuerto" type="xs:string"/>
+            <xs:element minOccurs="0" name="periodicidadPlazo" type="xs:string"/>
+            <xs:element minOccurs="0" name="periodoGracia" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="periodoGraciaDe" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="periodoGraciaHasta" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="periodoGraciaLetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="periodoGraciaNumero" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="periodoMuerto" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="periodoMuertoDe" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="periodoMuertoHasta" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="periodoMuertoLetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="periodoMuertoNumero" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="plazoCreditoDe" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="plazoCreditoHasta" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="plazoLetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="plazoNumero" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="porcentAmortizacionMensual" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="porcentAmortizacionSemestral" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="porcentajeCobertura" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="porcentajeComision" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="puntosPorcentualesRedescuento" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="regional" type="xs:string"/>
+            <xs:element minOccurs="0" name="seguroVida" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="serialNumero" type="xs:string"/>
+            <xs:element minOccurs="0" name="spreed" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="sucursal" type="xs:string"/>
+            <xs:element minOccurs="0" name="tasaInteres" type="xs:string"/>
+            <xs:element minOccurs="0" name="tasaInteresLetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="tasaInteresMora" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="tasaInteresMoraLetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="tasaInteresRenumEA" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="tasaInteresRenumEALetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="tasaNominal" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="tasaNominalLetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="tasaRedescuento" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="textoAdicional" type="xs:string"/>
+            <xs:element minOccurs="0" name="tipoPagare" type="xs:int"/>
+            <xs:element minOccurs="0" name="tipoPoliza" type="xs:string"/>
+            <xs:element minOccurs="0" name="valorCapitalLetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="valorCapitalNumero" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="valorComisionLetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="valorComisionNumeros" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="valorCuotaPesos" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="valorCuotaPesosLetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="valorCuotaUVR" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="valorCuotaUVRLetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="valorDesembolsoUVRLetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="valorInteresesLetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="valorInteresesMora" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="valorInteresesNumero" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="valorOtrosConceptosLetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="valorOtrosConceptosNumeros" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="valorOtrosSegurosLetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="valorOtrosSegurosNumeros" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="valorPesosActual" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="valorPesosDesembolso" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="valorPesosDesembolsoLetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="valorPesosDiligenciaLetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="valorPesosDiligenciamiento" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="valorSeguroVidaLetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="valorSeguroVidaNumeros" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="vis" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="archivoAdjuntoDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="contenido" type="xs:string"/>
+            <xs:element minOccurs="0" name="nombreArchivo" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="consultaGiradorServiceDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="giradorCuenta" type="xs:int"/>
+            <xs:element minOccurs="0" name="giradorNumId" type="xs:string"/>
+            <xs:element minOccurs="0" name="giradorTipoId" type="xs:int"/>
+            <xs:element minOccurs="0" name="idPersonaRepresentada" type="xs:long"/>
+            <xs:element minOccurs="0" name="idRol" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="respuestaDocumentoPagareDaneServiceDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="codigoError" type="xs:string"/>
+            <xs:element minOccurs="0" name="descripcion" type="xs:string"/>
+            <xs:element minOccurs="0" name="exitoso" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="respuesta" type="tns:documentoPagareDaneServiceDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="solicitudDesembolsoAnotarCuentaDTO">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="desembolsoAnotarCuentaDTO" nillable="true"
+                        type="tns:desembolsoAnotarCuentaDTO"/>
+            <xs:element minOccurs="0" name="header" type="tns:headerDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="desembolsoAnotarCuentaDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="idDocumentoPagare" type="xs:long"/>
+            <xs:element minOccurs="0" name="identificacionEmisor" type="xs:string"/>
+            <xs:element minOccurs="0" name="mensajeRespuesta" type="xs:string"/>
+            <xs:element minOccurs="0" name="numPagareEntidad" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="respuestaDesembolsoAnotarCuentaDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="codigoError" type="xs:string"/>
+            <xs:element minOccurs="0" name="descripcion" type="xs:string"/>
+            <xs:element minOccurs="0" name="exitoso" type="xs:boolean"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="listaRespusta" nillable="true"
+                        type="tns:desembolsoAnotarCuentaDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="solicitudConsultarPagareDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="consultaPagareServiceDTO" type="tns:consultaPagareServiceDTO"/>
+            <xs:element minOccurs="0" name="header" type="tns:headerDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="consultaPagareServiceDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="codigoDeceval" type="xs:long"/>
+            <xs:element minOccurs="0" name="idEstadoPagare" type="xs:int"/>
+            <xs:element minOccurs="0" name="idTipoIdentificacionFirmante" type="xs:int"/>
+            <xs:element minOccurs="0" name="numIdentificacionFirmante" type="xs:string"/>
+            <xs:element minOccurs="0" name="numPagareEntidad" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="respuestaConsultarPagaresDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="codigoError" type="xs:string"/>
+            <xs:element minOccurs="0" name="descripcion" type="xs:string"/>
+            <xs:element minOccurs="0" name="exitoso" type="xs:boolean"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="listaRespuesta" nillable="true"
+                        type="tns:informacionPagareServiceDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="informacionPagareServiceDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="estadoPagare" type="xs:string"/>
+            <xs:element minOccurs="0" name="fechaFirmaPagare" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="fechaGrabacionPagare" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="idPagareDeceval" type="xs:int"/>
+            <xs:element minOccurs="0" name="nombreOtorgante" type="xs:string"/>
+            <xs:element minOccurs="0" name="numPagareEntidad" type="xs:string"/>
+            <xs:element minOccurs="0" name="numeroDocumentoOtorgante" type="xs:string"/>
+            <xs:element minOccurs="0" name="pdfPagare" type="tns:archivoAdjuntoDTO"/>
+            <xs:element minOccurs="0" name="tipoDocumentoOtorgante" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="solicitudFirmarPagaresDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="header" type="tns:headerDTO"/>
+            <xs:element minOccurs="0" name="informacionFirmaPagareDTO" type="tns:informacionFirmaPagareDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="informacionFirmaPagareDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="OTPPagare" type="xs:string"/>
+            <xs:element minOccurs="0" name="OTPProcedimiento" type="xs:string"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="archivosAdjuntos" nillable="true"
+                        type="tns:archivoAdjuntoDTO"/>
+            <xs:element minOccurs="0" name="clave" type="xs:string"/>
+            <xs:element minOccurs="0" name="idDocumentoPagare" type="xs:long"/>
+            <xs:element minOccurs="0" name="idRolFirmante" type="xs:long"/>
+            <xs:element minOccurs="0" name="motivo" type="xs:string"/>
+            <xs:element minOccurs="0" name="numeroDocumento" type="xs:string"/>
+            <xs:element minOccurs="0" name="tipoDocumento" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="solicitudFirmarPagaresConCertificadoDTO">
+        <xs:complexContent>
+            <xs:extension base="tns:solicitudFirmarPagaresDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="numeroReferencia" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="respuestaFirmarPagaresDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="descripcion" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="radicacionSolicitudRequestNatural">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="archivosAdjuntos" nillable="true"
+                        type="tns:archivoAdjuntoSolicitudVO"/>
+            <xs:element minOccurs="0" name="ciudad" type="xs:int"/>
+            <xs:element minOccurs="0" name="ciudadDomicilio" type="xs:int"/>
+            <xs:element minOccurs="0" name="ciudadSolicitud" type="xs:int"/>
+            <xs:element minOccurs="0" name="depto" type="xs:int"/>
+            <xs:element minOccurs="0" name="deptoDomicilio" type="xs:int"/>
+            <xs:element minOccurs="0" name="descripcionSolicitud" type="xs:string"/>
+            <xs:element minOccurs="0" name="fechaExpedicion" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="fechaNacimiento" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="fkIdTipoDocumentoGirador" type="xs:int"/>
+            <xs:element minOccurs="0" name="header" type="tns:headerDTO"/>
+            <xs:element minOccurs="0" name="nombres" type="xs:string"/>
+            <xs:element minOccurs="0" name="novedad" type="xs:string"/>
+            <xs:element minOccurs="0" name="numeroDocumento" type="xs:string"/>
+            <xs:element minOccurs="0" name="numeroDocumentoOriginal" type="xs:string"/>
+            <xs:element minOccurs="0" name="pais" type="xs:int"/>
+            <xs:element minOccurs="0" name="paisDomicilio" type="xs:int"/>
+            <xs:element minOccurs="0" name="paisNacionalidad" type="xs:int"/>
+            <xs:element minOccurs="0" name="primerApellido" type="xs:string"/>
+            <xs:element minOccurs="0" name="tipoDocumentoOriginal" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="archivoAdjuntoSolicitudVO">
+        <xs:complexContent>
+            <xs:extension base="tns:baseDataVO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="archivo" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nombreArchivo" type="xs:string"/>
+                    <xs:element minOccurs="0" name="size" type="xs:long"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType abstract="true" name="baseDataVO">
+        <xs:sequence/>
+    </xs:complexType>
+
+    <xs:complexType name="respuestaRadicacionErrorDTO">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="errores" nillable="true" type="tns:errorDTO"/>
+            <xs:element name="valido" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="errorDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="codigo" type="xs:string"/>
+            <xs:element minOccurs="0" name="error" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="solicitudConsultaPagareServiceXMLDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="codigoDeceval" type="xs:int"/>
+            <xs:element minOccurs="0" name="header" type="tns:headerDTO"/>
+            <xs:element minOccurs="0" name="idTipoIdentificacionFirmante" type="xs:int"/>
+            <xs:element minOccurs="0" name="numIdentificacionFirmante" type="xs:string"/>
+            <xs:element minOccurs="0" name="numPagareEntidad" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="respuestaConsultaPagareXMLServiceDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="codigoError" type="xs:string"/>
+            <xs:element minOccurs="0" name="descripcion" type="xs:string"/>
+            <xs:element minOccurs="0" name="exitoso" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="fechaGrabacionPagare" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="idPagareDeceval" type="xs:int"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="listaRespuesta" nillable="true"
+                        type="tns:informacionPagareXmlServiceDTO"/>
+            <xs:element minOccurs="0" name="nombreEstadoPagare" type="xs:string"/>
+            <xs:element minOccurs="0" name="nombreOtorgante" type="xs:string"/>
+            <xs:element minOccurs="0" name="numIdentificacionOtorgante" type="xs:string"/>
+            <xs:element minOccurs="0" name="numPagareEntidad" type="xs:string"/>
+            <xs:element minOccurs="0" name="rolfirmante" type="xs:int"/>
+            <xs:element minOccurs="0" name="xmlPagare" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="informacionPagareXmlServiceDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="codigoSha" type="xs:string"/>
+            <xs:element minOccurs="0" name="estadoPagare" type="xs:string"/>
+            <xs:element minOccurs="0" name="fechaGrabacionPagare" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="idPagareDeceval" type="xs:int"/>
+            <xs:element minOccurs="0" name="nombreOtorgante" type="xs:string"/>
+            <xs:element minOccurs="0" name="numPagareEntidad" type="xs:string"/>
+            <xs:element minOccurs="0" name="numeroDocumentoOtorgante" type="xs:string"/>
+            <xs:element minOccurs="0" name="rolfirmante" type="xs:int"/>
+            <xs:element minOccurs="0" name="tipoDocumentoOtorgante" type="xs:string"/>
+            <xs:element minOccurs="0" name="xmlPagare" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="respuestaConsultarPagaresNopdfDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="codigoError" type="xs:string"/>
+            <xs:element minOccurs="0" name="descripcion" type="xs:string"/>
+            <xs:element minOccurs="0" name="exitoso" type="xs:boolean"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="listaRespuesta" nillable="true"
+                        type="tns:informacionPagareServiceNopdfDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="informacionPagareServiceNopdfDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="estadoPagare" type="xs:string"/>
+            <xs:element minOccurs="0" name="fechaFirmaPagare" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="fechaGrabacionPagare" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="idEstadoPagare" type="xs:int"/>
+            <xs:element minOccurs="0" name="idPagareDeceval" type="xs:int"/>
+            <xs:element minOccurs="0" name="nombreOtorgante" type="xs:string"/>
+            <xs:element minOccurs="0" name="numPagareEntidad" type="xs:string"/>
+            <xs:element minOccurs="0" name="numeroDocumentoOtorgante" type="xs:string"/>
+            <xs:element minOccurs="0" name="tipoDocumentoOtorgante" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="solicitudGeneracionMasivaCertificadosDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="header" type="tns:headerDTO"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="noPagareEntidad" nillable="true"
+                        type="tns:entradasGeneracionMasivaCertificadosDTO"/>
+            <xs:element minOccurs="0" name="tipoCertificado" type="xs:string"/>
+            <xs:element minOccurs="0" name="tipoPagare" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="entradasGeneracionMasivaCertificadosDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="codigoDeceval" type="xs:string"/>
+            <xs:element minOccurs="0" name="noPagareDeceval" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="respuestaGeneracionMasivaCertificadosDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="codigoError" type="xs:string"/>
+            <xs:element minOccurs="0" name="codigoSolicitud" type="xs:string"/>
+            <xs:element minOccurs="0" name="descripcion" type="xs:string"/>
+            <xs:element minOccurs="0" name="exitoso" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="mensajeRespuesta" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="registroFirmarPagaresXmlDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="header" type="tns:headerDTO"/>
+            <xs:element minOccurs="0" name="informacionFirmaPagareXmlDTO" type="tns:informacionFirmaPagareXmlDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="informacionFirmaPagareXmlDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="codigoSha" type="xs:string"/>
+            <xs:element minOccurs="0" name="fechaFirma" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="idDocumentoPagare" type="xs:long"/>
+            <xs:element minOccurs="0" name="idRolFirmante" type="xs:long"/>
+            <xs:element minOccurs="0" name="motivo" type="xs:string"/>
+            <xs:element minOccurs="0" name="numeroDocumento" type="xs:string"/>
+            <xs:element minOccurs="0" name="tipoDocumento" type="xs:int"/>
+            <xs:element minOccurs="0" name="xmlPagare" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="respuestaFirmarPagaresXmlDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="codigoError" type="xs:string"/>
+            <xs:element minOccurs="0" name="descripcion" type="xs:string"/>
+            <xs:element minOccurs="0" name="exitoso" type="xs:boolean"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="infoXmlList" nillable="true"
+                        type="tns:informacionFirmaPagareXmlDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="solicitudCrearGiradorDaneServiceDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="crearGiradorDTO" type="tns:crearGiradorDaneServiceDTO"/>
+            <xs:element minOccurs="0" name="header" type="tns:headerDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="crearGiradorDaneServiceDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="agenteAutoretenedor_Jur" type="xs:int"/>
+            <xs:element minOccurs="0" name="camaraComercioNo_Jur" type="xs:string"/>
+            <xs:element minOccurs="0" name="circuloNo_Jur" type="xs:string"/>
+            <xs:element minOccurs="0" name="correoElectronico" type="xs:string"/>
+            <xs:element name="cuentaGirador" type="xs:long"/>
+            <xs:element minOccurs="0" name="declarante_Jur" type="xs:int"/>
+            <xs:element minOccurs="0" name="direccion1PersonaGrupo_PGP" type="xs:string"/>
+            <xs:element minOccurs="0" name="direccion2PersonaGrupo_PGP" type="xs:string"/>
+            <xs:element minOccurs="0" name="direccion3PersonaGrupo_PGP" type="xs:string"/>
+            <xs:element minOccurs="0" name="escrituraNo_Jur" type="xs:string"/>
+            <xs:element minOccurs="0" name="estadoCivil" type="xs:string"/>
+            <xs:element minOccurs="0" name="fax1PersonaGrupo_PGP" type="xs:string"/>
+            <xs:element minOccurs="0" name="fax2PersonaGrupo_PGP" type="xs:string"/>
+            <xs:element minOccurs="0" name="fax3PersonaGrupo_PGP" type="xs:string"/>
+            <xs:element minOccurs="0" name="fechaCamara_Jur" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="fechaConstitucion_Jur" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="fechaEscritura_Jur" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="fechaExpedicion_Nat" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="fechaNacimiento_Nat" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="fkIdCiudadCamara_Jur" type="xs:string"/>
+            <xs:element minOccurs="0" name="fkIdCiudadDomicilio_Nat" type="xs:string"/>
+            <xs:element minOccurs="0" name="fkIdCiudadExpedicion_Nat" type="xs:string"/>
+            <xs:element minOccurs="0" name="fkIdCiudad_Jur" type="xs:string"/>
+            <xs:element minOccurs="0" name="fkIdClasePersona" type="xs:int"/>
+            <xs:element minOccurs="0" name="fkIdDepartamentoCamara_Jur" type="xs:string"/>
+            <xs:element minOccurs="0" name="fkIdDepartamentoDomicilio_Nat" type="xs:string"/>
+            <xs:element minOccurs="0" name="fkIdDepartamentoExpedicion_Nat" type="xs:string"/>
+            <xs:element minOccurs="0" name="fkIdDepartamento_Jur" type="xs:string"/>
+            <xs:element minOccurs="0" name="fkIdPaisCamara_Jur" type="xs:string"/>
+            <xs:element minOccurs="0" name="fkIdPaisDomicilio_Nat" type="xs:string"/>
+            <xs:element minOccurs="0" name="fkIdPaisExpedicion_Nat" type="xs:string"/>
+            <xs:element minOccurs="0" name="fkIdPaisNacionalidad_Nat" type="xs:string"/>
+            <xs:element minOccurs="0" name="fkIdPais_Jur" type="xs:string"/>
+            <xs:element minOccurs="0" name="fkIdTipoDocumento" type="xs:int"/>
+            <xs:element minOccurs="0" name="identificacionEmisor" type="xs:string"/>
+            <xs:element minOccurs="0" name="libroNo_Jur" type="xs:string"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="listaRepresentantesLegales" nillable="true"
+                        type="tns:representanteLegalServiceDTO"/>
+            <xs:element minOccurs="0" name="mensajeRespuesta" type="xs:string"/>
+            <xs:element minOccurs="0" name="nombresNat_Nat" type="xs:string"/>
+            <xs:element minOccurs="0" name="notariaNo_Jur" type="xs:string"/>
+            <xs:element minOccurs="0" name="numeroCelular" type="xs:string"/>
+            <xs:element minOccurs="0" name="numeroDocumento" type="xs:string"/>
+            <xs:element minOccurs="0" name="pensionado" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="primerApellido_Nat" type="xs:string"/>
+            <xs:element minOccurs="0" name="razonSocial_Jur" type="xs:string"/>
+            <xs:element minOccurs="0" name="regitroSuper_Jur" type="xs:string"/>
+            <xs:element minOccurs="0" name="residente_Jur" type="xs:int"/>
+            <xs:element minOccurs="0" name="salario" type="xs:double"/>
+            <xs:element minOccurs="0" name="segundoApellido_Nat" type="xs:string"/>
+            <xs:element minOccurs="0" name="telefono1PersonaGrupo_PGP" type="xs:string"/>
+            <xs:element minOccurs="0" name="telefono2PersonaGrupo_PGP" type="xs:string"/>
+            <xs:element minOccurs="0" name="telefono3PersonaGrupo_PGP" type="xs:string"/>
+            <xs:element minOccurs="0" name="tiempoServicio" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="representanteLegalServiceDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="cuenta" type="xs:int"/>
+            <xs:element minOccurs="0" name="idTipoRepresentante" type="xs:int"/>
+            <xs:element minOccurs="0" name="numIdentificacion" type="xs:string"/>
+            <xs:element minOccurs="0" name="tipoIdentificacion" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="respuestaCrearGiradorDaneServiceDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="codigoError" type="xs:string"/>
+            <xs:element minOccurs="0" name="descripcion" type="xs:string"/>
+            <xs:element minOccurs="0" name="exitoso" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="respuesta" type="tns:crearGiradorDaneServiceDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="solicitudFirmarPagaresCaracteresDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="header" type="tns:headerDTO"/>
+            <xs:element minOccurs="0" name="informacionFirmaPagareCaracteresDTO"
+                        type="tns:informacionFirmaPagareCaracteresDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="informacionFirmaPagareCaracteresDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="OTPPagare" type="xs:string"/>
+            <xs:element minOccurs="0" name="OTPProcedimiento" type="xs:string"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="archivosAdjuntos" nillable="true"
+                        type="tns:archivoAdjuntoDTO"/>
+            <xs:element minOccurs="0" name="clave" type="xs:string"/>
+            <xs:element minOccurs="0" name="idDocumentoPagare" type="xs:long"/>
+            <xs:element minOccurs="0" name="idRolFirmante" type="xs:long"/>
+            <xs:element minOccurs="0" name="motivo" type="xs:string"/>
+            <xs:element minOccurs="0" name="numeroDocumento" type="xs:string"/>
+            <xs:element minOccurs="0" name="tipoDocumento" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="respuestaFirmarPagaresCodigoErrorDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="codigoError" type="xs:string"/>
+            <xs:element minOccurs="0" name="descripcion" type="xs:string"/>
+            <xs:element minOccurs="0" name="exitoso" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="solicitudCrearGiradorServiceDTO">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="crearGiradorDTO" nillable="true"
+                        type="tns:crearGiradorServiceDTO"/>
+            <xs:element minOccurs="0" name="header" type="tns:headerDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="crearGiradorServiceDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="agenteAutoretenedor_Jur" type="xs:int"/>
+            <xs:element minOccurs="0" name="camaraComercioNo_Jur" type="xs:string"/>
+            <xs:element minOccurs="0" name="circuloNo_Jur" type="xs:string"/>
+            <xs:element minOccurs="0" name="correoElectronico" type="xs:string"/>
+            <xs:element name="cuentaGirador" type="xs:long"/>
+            <xs:element minOccurs="0" name="declarante_Jur" type="xs:int"/>
+            <xs:element minOccurs="0" name="direccion1PersonaGrupo_PGP" type="xs:string"/>
+            <xs:element minOccurs="0" name="direccion2PersonaGrupo_PGP" type="xs:string"/>
+            <xs:element minOccurs="0" name="direccion3PersonaGrupo_PGP" type="xs:string"/>
+            <xs:element minOccurs="0" name="escrituraNo_Jur" type="xs:string"/>
+            <xs:element minOccurs="0" name="estadoCivil" type="xs:string"/>
+            <xs:element minOccurs="0" name="fax1PersonaGrupo_PGP" type="xs:string"/>
+            <xs:element minOccurs="0" name="fax2PersonaGrupo_PGP" type="xs:string"/>
+            <xs:element minOccurs="0" name="fax3PersonaGrupo_PGP" type="xs:string"/>
+            <xs:element minOccurs="0" name="fechaCamara_Jur" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="fechaConstitucion_Jur" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="fechaEscritura_Jur" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="fechaExpedicion_Nat" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="fechaNacimiento_Nat" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="fkIdCiudadCamara_Jur" type="xs:int"/>
+            <xs:element minOccurs="0" name="fkIdCiudadDomicilio_Nat" type="xs:int"/>
+            <xs:element minOccurs="0" name="fkIdCiudadExpedicion_Nat" type="xs:int"/>
+            <xs:element minOccurs="0" name="fkIdCiudad_Jur" type="xs:int"/>
+            <xs:element minOccurs="0" name="fkIdClasePersona" type="xs:int"/>
+            <xs:element minOccurs="0" name="fkIdDepartamentoCamara_Jur" type="xs:int"/>
+            <xs:element minOccurs="0" name="fkIdDepartamentoDomicilio_Nat" type="xs:int"/>
+            <xs:element minOccurs="0" name="fkIdDepartamentoExpedicion_Nat" type="xs:int"/>
+            <xs:element minOccurs="0" name="fkIdDepartamento_Jur" type="xs:int"/>
+            <xs:element minOccurs="0" name="fkIdPaisCamara_Jur" type="xs:int"/>
+            <xs:element minOccurs="0" name="fkIdPaisDomicilio_Nat" type="xs:int"/>
+            <xs:element minOccurs="0" name="fkIdPaisExpedicion_Nat" type="xs:int"/>
+            <xs:element minOccurs="0" name="fkIdPaisNacionalidad_Nat" type="xs:int"/>
+            <xs:element minOccurs="0" name="fkIdPais_Jur" type="xs:int"/>
+            <xs:element minOccurs="0" name="fkIdTipoDocumento" type="xs:int"/>
+            <xs:element minOccurs="0" name="identificacionEmisor" type="xs:string"/>
+            <xs:element minOccurs="0" name="libroNo_Jur" type="xs:string"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="listaRepresentantesLegales" nillable="true"
+                        type="tns:representanteLegalServiceDTO"/>
+            <xs:element minOccurs="0" name="mensajeRespuesta" type="xs:string"/>
+            <xs:element minOccurs="0" name="nombresNat_Nat" type="xs:string"/>
+            <xs:element minOccurs="0" name="notariaNo_Jur" type="xs:string"/>
+            <xs:element minOccurs="0" name="numeroCelular" type="xs:string"/>
+            <xs:element minOccurs="0" name="numeroDocumento" type="xs:string"/>
+            <xs:element minOccurs="0" name="pensionado" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="primerApellido_Nat" type="xs:string"/>
+            <xs:element minOccurs="0" name="razonSocial_Jur" type="xs:string"/>
+            <xs:element minOccurs="0" name="regitroSuper_Jur" type="xs:string"/>
+            <xs:element minOccurs="0" name="residente_Jur" type="xs:int"/>
+            <xs:element minOccurs="0" name="salario" type="xs:double"/>
+            <xs:element minOccurs="0" name="segundoApellido_Nat" type="xs:string"/>
+            <xs:element minOccurs="0" name="telefono1PersonaGrupo_PGP" type="xs:string"/>
+            <xs:element minOccurs="0" name="telefono2PersonaGrupo_PGP" type="xs:string"/>
+            <xs:element minOccurs="0" name="telefono3PersonaGrupo_PGP" type="xs:string"/>
+            <xs:element minOccurs="0" name="tiempoServicio" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="respuestaCrearGiradorServiceDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="codigoError" type="xs:string"/>
+            <xs:element minOccurs="0" name="descripcion" type="xs:string"/>
+            <xs:element minOccurs="0" name="exitoso" type="xs:boolean"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="listaRespusta" nillable="true"
+                        type="tns:crearGiradorServiceDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="solicitudAmortizacionSaldosServiceDTO">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="amortizacionSaldosDTO" nillable="true"
+                        type="tns:amortizacionSaldosServiceDTO"/>
+            <xs:element minOccurs="0" name="header" type="tns:headerDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="amortizacionSaldosServiceDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="codigoAdministrador_AntCta" type="xs:string"/>
+            <xs:element minOccurs="0" name="codigoEmisor_AntCta" type="xs:string"/>
+            <xs:element minOccurs="0" name="codigoISIN_DocPag" type="xs:string"/>
+            <xs:element minOccurs="0" name="cuentaBeneficiario_DocPag" type="xs:string"/>
+            <xs:element minOccurs="0" name="exitoso" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="idDocumentoPagare_DocPag" type="xs:long"/>
+            <xs:element minOccurs="0" name="idUsuarioSession" type="xs:long"/>
+            <xs:element minOccurs="0" name="mensajeRespuesta" type="xs:string"/>
+            <xs:element minOccurs="0" name="nombreUsuarioSession" type="xs:string"/>
+            <xs:element minOccurs="0" name="numPagareEntidad_DocPag" type="xs:string"/>
+            <xs:element minOccurs="0" name="otrosValores_DetOpe" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="valorAmortizacionCapital_DetOpe" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="valorInteresesCtes_DetOpe" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="valorInteresesMora_DetOpe" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="valorPagado_DetOpe" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="valorSeguro_DetOpe" type="xs:decimal"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="respuestaAmortizacionSaldosServiceDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="codigoError" type="xs:string"/>
+            <xs:element minOccurs="0" name="descripcion" type="xs:string"/>
+            <xs:element minOccurs="0" name="exitoso" type="xs:boolean"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="listaRespusta" nillable="true"
+                        type="tns:amortizacionSaldosServiceDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="solicitudCrearPagareServiceDTO">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="documentoPagareServiceDTO" nillable="true"
+                        type="tns:documentoPagareServiceDTO"/>
+            <xs:element minOccurs="0" name="header" type="tns:headerDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="documentoPagareServiceDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="adquisicionVivienda" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="apoderadoCuenta" type="xs:int"/>
+            <xs:element minOccurs="0" name="apoderadoNumId" type="xs:string"/>
+            <xs:element minOccurs="0" name="apoderadoTipoId" type="xs:int"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="archivosAdjuntos" nillable="true"
+                        type="tns:archivoAdjuntoDTO"/>
+            <xs:element minOccurs="0" name="autorizaDebitoAutomatico" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="aval" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="baseLiquidacionPlazo" type="xs:string"/>
+            <xs:element minOccurs="0" name="baseLiquidacionTasa" type="xs:string"/>
+            <xs:element minOccurs="0" name="ciCEApartirDelMes" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="ciCEPagaderaCada" type="xs:int"/>
+            <xs:element minOccurs="0" name="ciConCuotasExtras" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="ciConPeriodoGracia" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="ciNumCuotasExtras" type="xs:int"/>
+            <xs:element minOccurs="0" name="ciValorCuotaExtra" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="ciudadCreacion" type="xs:string"/>
+            <xs:element minOccurs="0" name="ciudadDesembolso" type="xs:string"/>
+            <xs:element minOccurs="0" name="codOficina" type="xs:string"/>
+            <xs:element minOccurs="0" name="construccionViviendaIndividual" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="creditoReembolsableEn" type="xs:string"/>
+            <xs:element minOccurs="0" name="cuenta" type="xs:string"/>
+            <xs:element minOccurs="0" name="departamento" type="xs:string"/>
+            <xs:element minOccurs="0" name="deptoCreacion" type="xs:string"/>
+            <xs:element minOccurs="0" name="destinoOperacion" type="xs:string"/>
+            <xs:element minOccurs="0" name="diaPago" type="xs:int"/>
+            <xs:element minOccurs="0" name="dtfDessembolso" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="dtfEA" type="xs:string"/>
+            <xs:element minOccurs="0" name="empresaOtorgante" type="xs:string"/>
+            <xs:element minOccurs="0" name="fechaDesembolso" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="fechaGrabacionPagare" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="fechaPagoPrimerCuota" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="fechaPagoPrimerCuotaCapital" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="fechaPagoPrimerCuotaInteres" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="fechaPagoPrimerCuotaMensual" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="fechaPagoPrimerCuotaSemestral" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="fechaVencimientoFinanciero" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="garantiaAdicional" type="xs:string"/>
+            <xs:element minOccurs="0" name="idClaseDefinicionDocumento" type="xs:long"/>
+            <xs:element minOccurs="0" name="idDocumentoPagare" type="xs:long"/>
+            <xs:element minOccurs="0" name="listaAmortizaciones" type="xs:string"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="listaApoderadoRepresentantePagare" nillable="true"
+                        type="tns:consultaGiradorServiceDTO"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="listaCodeudoresAvalistasPagare" nillable="true"
+                        type="tns:consultaGiradorServiceDTO"/>
+            <xs:element minOccurs="0" name="margenRedescuento" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="mejoramientoViviendaInterSoci" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="mensajeRespuesta" type="xs:string"/>
+            <xs:element minOccurs="0" name="modalidad" type="xs:string"/>
+            <xs:element minOccurs="0" name="modalidadPagoCapital" type="xs:string"/>
+            <xs:element minOccurs="0" name="modalidadPagosInteres" type="xs:string"/>
+            <xs:element minOccurs="0" name="nitEmisor" type="xs:string"/>
+            <xs:element minOccurs="0" name="noVis" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="numCredito" type="xs:string"/>
+            <xs:element minOccurs="0" name="numCuotas" type="xs:int"/>
+            <xs:element minOccurs="0" name="numCuotasLetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="numPagareEntidad" type="xs:string"/>
+            <xs:element minOccurs="0" name="numReferencia" type="xs:string"/>
+            <xs:element minOccurs="0" name="numUnidadesUVR" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="numeroPoliza" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="otorganteCuenta" type="xs:int"/>
+            <xs:element minOccurs="0" name="otorganteNumId" type="xs:string"/>
+            <xs:element minOccurs="0" name="otorganteTipoId" type="xs:int"/>
+            <xs:element minOccurs="0" name="otraModalidadPago" type="xs:string"/>
+            <xs:element minOccurs="0" name="otroDestino" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="pais" type="xs:string"/>
+            <xs:element minOccurs="0" name="paisCreacion" type="xs:string"/>
+            <xs:element minOccurs="0" name="periodicidadGracia" type="xs:string"/>
+            <xs:element minOccurs="0" name="periodicidadMuerto" type="xs:string"/>
+            <xs:element minOccurs="0" name="periodicidadPlazo" type="xs:string"/>
+            <xs:element minOccurs="0" name="periodoGracia" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="periodoGraciaDe" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="periodoGraciaHasta" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="periodoGraciaLetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="periodoGraciaNumero" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="periodoMuerto" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="periodoMuertoDe" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="periodoMuertoHasta" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="periodoMuertoLetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="periodoMuertoNumero" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="plazoCreditoDe" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="plazoCreditoHasta" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="plazoLetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="plazoNumero" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="porcentAmortizacionMensual" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="porcentAmortizacionSemestral" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="porcentajeCobertura" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="porcentajeComision" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="puntosPorcentualesRedescuento" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="regional" type="xs:string"/>
+            <xs:element minOccurs="0" name="seguroVida" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="serialNumero" type="xs:string"/>
+            <xs:element minOccurs="0" name="spreed" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="sucursal" type="xs:string"/>
+            <xs:element minOccurs="0" name="tasaInteres" type="xs:string"/>
+            <xs:element minOccurs="0" name="tasaInteresLetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="tasaInteresMora" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="tasaInteresMoraLetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="tasaInteresRenumEA" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="tasaInteresRenumEALetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="tasaNominal" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="tasaNominalLetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="tasaRedescuento" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="textoAdicional" type="xs:string"/>
+            <xs:element minOccurs="0" name="tipoPagare" type="xs:int"/>
+            <xs:element minOccurs="0" name="tipoPoliza" type="xs:string"/>
+            <xs:element minOccurs="0" name="valorCapitalLetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="valorCapitalNumero" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="valorComisionLetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="valorComisionNumeros" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="valorCuotaPesos" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="valorCuotaPesosLetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="valorCuotaUVR" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="valorCuotaUVRLetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="valorDesembolsoUVRLetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="valorInteresesLetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="valorInteresesMora" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="valorInteresesNumero" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="valorOtrosConceptosLetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="valorOtrosConceptosNumeros" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="valorOtrosSegurosLetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="valorOtrosSegurosNumeros" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="valorPesosActual" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="valorPesosDesembolso" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="valorPesosDesembolsoLetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="valorPesosDiligenciaLetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="valorPesosDiligenciamiento" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="valorSeguroVidaLetras" type="xs:string"/>
+            <xs:element minOccurs="0" name="valorSeguroVidaNumeros" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="vis" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="respuestaDocumentoPagareServiceDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="codigoError" type="xs:string"/>
+            <xs:element minOccurs="0" name="descripcion" type="xs:string"/>
+            <xs:element minOccurs="0" name="exitoso" type="xs:boolean"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="listaRespusta" nillable="true"
+                        type="tns:documentoPagareServiceDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="respuestaFirmarPagaresAsincronoDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="codigoError" type="xs:string"/>
+            <xs:element minOccurs="0" name="descripcion" type="xs:string"/>
+            <xs:element minOccurs="0" name="exitoso" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="solicitudAnulacionPagaresDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="codigoDeceval" type="xs:int"/>
+            <xs:element minOccurs="0" name="header" type="tns:headerDTO"/>
+            <xs:element minOccurs="0" name="motivoAnulacion" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="respuestaAnulacionPagaresDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="codigoError" type="xs:string"/>
+            <xs:element minOccurs="0" name="codigoOperacion" type="xs:string"/>
+            <xs:element minOccurs="0" name="descripcion" type="xs:string"/>
+            <xs:element minOccurs="0" name="exitoso" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="mensajeRespuesta" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="cambioEstadoPagareDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="header" type="tns:headerDTO"/>
+            <xs:element minOccurs="0" name="idDocumentoPagare" type="xs:long"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="respuestaCambiarEstadoProvisionalADefinitivoDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="codigoError" type="xs:string"/>
+            <xs:element minOccurs="0" name="descripcion" type="xs:string"/>
+            <xs:element minOccurs="0" name="exitoso" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

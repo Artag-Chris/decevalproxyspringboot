@@ -1,0 +1,23 @@
+<xsd:schema xmlns:ns0="http://deceval.com/mrc/solicitud/model/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://deceval.com/mrc/solicitud/model/" elementFormDefault="qualified">
+<xsd:complexType name="InformacionFirmaPagareTO">
+<xsd:sequence>
+<xsd:element name="CodigoError" type="xsd:string" nillable="true"/>
+<xsd:element name="DescripcionError" type="xsd:string" nillable="true"/>
+<xsd:element name="UrlFirmaPagare" type="xsd:string" nillable="true"/>
+<xsd:element name="Token" type="xsd:string" nillable="true"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="InformacionPagareTO">
+<xsd:sequence>
+<xsd:element name="EntidadBancariaId" type="xsd:string" nillable="true"/>
+<xsd:element name="Estado" type="xsd:string" nillable="true"/>
+<xsd:element name="TipoDocumentoEntidad" type="xsd:string" nillable="true"/>
+<xsd:element name="NumeroIdentificacionEntidad" type="xsd:string" nillable="true"/>
+<xsd:element name="TipoDocumentoFirmante" type="xsd:string" nillable="true"/>
+<xsd:element name="NumeroDocumentoFirmante" type="xsd:string" nillable="true"/>
+<xsd:element name="NombreFirmante" type="xsd:string" nillable="true"/>
+<xsd:element name="ApellidoFirmante" type="xsd:string" nillable="true"/>
+<xsd:element name="IpOrigen" type="xsd:string" nillable="true"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>
