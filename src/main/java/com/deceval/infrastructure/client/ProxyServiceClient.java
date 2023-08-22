@@ -99,10 +99,12 @@ public class ProxyServiceClient {
         return properties;
     }
 
-    public void setupSsl(SSLContext sslContext){
-        try {
-            InputStream identityInputStream = Files.newInputStream(Paths.get(
-                    PropertiesLoader.loadProperty("co.com.integracion.ssl.keystore.file")));
+    public void setupSsl(SSLContext sslContext) {
+        try(InputStream identityInputStream = Files.newInputStream(Paths.get(
+                PropertiesLoader.loadProperty("co.com.integracion.ssl.keystore.file")));
+            InputStream trustStoreInputStream = Files.newInputStream(Paths.get(
+                PropertiesLoader.loadProperty("co.com.integracion.ssl.keystore.file")))) {
+
             KeyStore identity = KeyStore.getInstance(KeyStore.getDefaultType());
             identity.load(identityInputStream,
                     PropertiesLoader.loadProperty("co.com.integracion.ssl.keystore.password").toCharArray());
@@ -112,8 +114,7 @@ public class ProxyServiceClient {
                     PropertiesLoader.loadProperty("co.com.integracion.ssl.keystore.password").toCharArray());
             KeyManager[] keyManagers = keyManagerFactory.getKeyManagers();
 
-            InputStream trustStoreInputStream = Files.newInputStream(Paths.get(
-                    PropertiesLoader.loadProperty("co.com.integracion.ssl.keystore.file")));
+
             KeyStore trusstore = KeyStore.getInstance(KeyStore.getDefaultType());
             trusstore.load(trustStoreInputStream,
                     PropertiesLoader.loadProperty("co.com.integracion.ssl.keystore.password").toCharArray());
@@ -125,19 +126,9 @@ public class ProxyServiceClient {
             sslContext.init(keyManagers, trustManagers, null);
             System.setProperty("http.auth.digest.validateServer", "true");
 
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-       /* System.setProperty("javax.net.ssl.trustStore",
-                PropertiesLoader.loadProperty("co.com.integracion.ssl.keystore.file"));
-        System.setProperty("javax.net.ssl.trustStorePassword",
-                PropertiesLoader.loadProperty("co.com.integracion.ssl.keystore.password"));*/
-        // certificados del cliente
-        /*System.setProperty("javax.net.ssl.keyStore",
-                PropertiesLoader.loadProperty("co.com.integracion.ssl.keystore.file"));
-        System.setProperty("javax.net.ssl.keyStorePassword",
-                PropertiesLoader.loadProperty("co.com.integracion.ssl.keystore.password"));*/
-      /*  System.setProperty("http.auth.digest.validateServer", "true");*/
     }
 
     public Properties cryptoProperties(){

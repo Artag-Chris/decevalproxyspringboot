@@ -4,6 +4,7 @@ target/
 !**/src/test/**/target/
 certificados/
 keys/
+.scannerwork/
 
 ### STS ###
 .apt_generated
@@ -14,6 +15,7 @@ keys/
 .springBeans
 .sts4-cache
 Dockerfile
+sonar-project.properties
 
 ### IntelliJ IDEA ###
 .idea
