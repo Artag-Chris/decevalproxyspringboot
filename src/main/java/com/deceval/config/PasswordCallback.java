@@ -1,8 +1,11 @@
 package com.deceval.config;
 
 
+import com.deceval.infrastructure.constants.ConstantsProperties;
 import com.deceval.infrastructure.util.PropertiesLoader;
 import org.apache.wss4j.common.ext.WSPasswordCallback;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.security.auth.callback.Callback;
 import javax.security.auth.callback.CallbackHandler;
@@ -17,16 +20,18 @@ import java.io.IOException;
  */
 public class PasswordCallback implements CallbackHandler {
 
+    Logger LOGGER = LoggerFactory.getLogger(PasswordCallback.class);
+
     @Override
     public void handle(Callback[] callbacks) throws IOException, UnsupportedCallbackException {
         WSPasswordCallback pc = (WSPasswordCallback) callbacks[0];
-        System.out.println("Identificador: " + pc.getIdentifier());
+        LOGGER.info("Identificador: " + pc.getIdentifier());
         if (pc.getIdentifier() != null) {
             pc.setPassword(null);
-            if (pc.getIdentifier().equals(PropertiesLoader.loadProperty("co.com.integracion.wssecurity.keystore.user"))) {
-                pc.setPassword(PropertiesLoader.loadProperty("co.com.integracion.wssecurity.keystore.password"));
+            if (pc.getIdentifier().equals(PropertiesLoader.loadProperty(ConstantsProperties.WSSECURITY_USER.getName()))) {
+                pc.setPassword(PropertiesLoader.loadProperty(ConstantsProperties.WSSECURITY_PASSWORD.getName()));
             } else {
-                pc.setPassword(PropertiesLoader.loadProperty("co.com.integracion.token.password"));
+                pc.setPassword(PropertiesLoader.loadProperty(ConstantsProperties.TOKEN_PASSWORD.getName()));
             }
         }
     }

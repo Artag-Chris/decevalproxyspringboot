@@ -1,5 +1,8 @@
 package com.deceval.infrastructure.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -10,6 +13,8 @@ import java.util.Properties;
  * @author inerjanuerbernate
  */
 public class PropertiesLoader {
+
+    static Logger LOGGER = LoggerFactory.getLogger(PropertiesLoader.class);
 
     private static PropertiesLoader propsLoader = null;
 
@@ -32,10 +37,10 @@ public class PropertiesLoader {
         try {
             value = getInstance().properties.getProperty(key);
         } catch (Exception e) {
-            System.out.println(e.getClass());
-            System.out.println(e.getCause());
-            System.out.println(e.getMessage());
-            System.out.println("Error cargando archivo de propiedades");
+            LOGGER.error(e.getClass().getName());
+            LOGGER.error(e.getCause().getMessage());
+            LOGGER.error(e.getMessage());
+            LOGGER.error("Error cargando archivo de propiedades");
             e.printStackTrace();
         }
         return value;
@@ -45,7 +50,7 @@ public class PropertiesLoader {
         InputStream instr = null;
         try {
             String path = System.getenv("PATH_CLIENT_PROPERTIES");
-            System.out.println(path);
+            LOGGER.info(path);
             Properties p = System.getProperties();
             FileReader reader = new FileReader(path);
             if (reader != null) {
