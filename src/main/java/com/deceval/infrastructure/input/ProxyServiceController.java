@@ -30,7 +30,7 @@ import java.io.Serializable;
 
 /**
  * Esta clase se encarga de exponer los servicios a los cuales el cliente tendra acceso
- * aca podra habilitar o inabilitar los servicios que necesite
+ * aca podra habilitar o inhabilitar los servicios que necesite
  * @author inerjanuerBernate
  */
 @WebService(targetNamespace = "http://services.proxy.deceval.com/", portName = "ProxyServicesImplPort", serviceName = "ProxyServicesImplService")
