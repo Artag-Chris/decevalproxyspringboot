@@ -35,6 +35,7 @@ el cual debe tener la misma estructura de nuestro application-dev.properties
 #### Docker 
 - Para realiazar la implementacion de docker en el proyecto actual se encuentra el Dockerfile dentro de nuestro proyecto
   - Lo primero que se debe realizar es tener compilado el proyecto y funcionando en local
+  - Se debe crear la carpeta de keys dentro del proyecto y agregar los dos jks 
   - Al momento de correr los comandos remover los signos [ ] y cambiar las variables internas.
   - Ejecutamos el siguiente comando para crear nuestra imagen de docker
   - ```docker build -t [nombre-imagen:version-imagen] .```
