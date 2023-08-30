@@ -10,7 +10,7 @@ server:
 
 logging:
   file:
-    name: /home/inerjanuer/inerjanuer/bvc-test/deceval_11/logs/Server.log
+    name: ${PATH_LOGS}\Server.log
   logback:
     rollingpolicy:
       file-name-pattern: Server-%d{yyyy-MM-dd}.log

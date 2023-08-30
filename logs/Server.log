@@ -1,0 +1,242 @@
+2023-08-30 11:07:44.588  INFO 3740 --- [main] com.deceval.DecevalApplication           : Starting DecevalApplication on DESKTOP-D4K75HQ with PID 3740 (D:\code\bvc-dep-pagares-ms-proxy\target\classes started by User in D:\code\bvc-dep-pagares-ms-proxy)
+2023-08-30 11:07:44.590  INFO 3740 --- [main] com.deceval.DecevalApplication           : The following profiles are active: dev
+2023-08-30 11:07:45.573  INFO 3740 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9000 (http)
+2023-08-30 11:07:45.581  INFO 3740 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-30 11:07:45.581  INFO 3740 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2023-08-30 11:07:45.655  INFO 3740 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-30 11:07:45.655  INFO 3740 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1036 ms
+2023-08-30 11:07:45.836  INFO 3740 --- [main] o.a.c.w.s.f.ReflectionServiceFactoryBean : Creating Service {http://services.proxy.deceval.com/}ProxyServicesImplService from class com.deceval.infrastructure.input.ProxyServiceController
+2023-08-30 11:07:46.435  INFO 3740 --- [main] org.apache.cxf.endpoint.ServerImpl       : Setting the server's publish address to be /ProxyServicesImplPort
+2023-08-30 11:07:46.502  INFO 3740 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-08-30 11:07:46.597  INFO 3740 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9000 (http) with context path ''
+2023-08-30 11:07:46.602  INFO 3740 --- [main] com.deceval.DecevalApplication           : Started DecevalApplication in 2.367 seconds (JVM running for 2.735)
+2023-08-30 11:07:50.259  INFO 3740 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-08-30 11:39:04.027  INFO 15316 --- [main] com.deceval.DecevalApplication           : Starting DecevalApplication on DESKTOP-D4K75HQ with PID 15316 (D:\code\bvc-dep-pagares-ms-proxy\target\classes started by User in D:\code\bvc-dep-pagares-ms-proxy)
+2023-08-30 11:39:04.029  INFO 15316 --- [main] com.deceval.DecevalApplication           : The following profiles are active: dev
+2023-08-30 11:39:04.892  INFO 15316 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9000 (http)
+2023-08-30 11:39:04.899  INFO 15316 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-30 11:39:04.899  INFO 15316 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2023-08-30 11:39:04.968  INFO 15316 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-30 11:39:04.968  INFO 15316 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 914 ms
+2023-08-30 11:39:05.121  INFO 15316 --- [main] o.a.c.w.s.f.ReflectionServiceFactoryBean : Creating Service {http://services.proxy.deceval.com/}ProxyServicesImplService from class com.deceval.infrastructure.input.ProxyServiceController
+2023-08-30 11:39:05.686  INFO 15316 --- [main] org.apache.cxf.endpoint.ServerImpl       : Setting the server's publish address to be /ProxyServicesImplPort
+2023-08-30 11:39:05.750  INFO 15316 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-08-30 11:39:05.834  INFO 15316 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9000 (http) with context path ''
+2023-08-30 11:39:05.839  INFO 15316 --- [main] com.deceval.DecevalApplication           : Started DecevalApplication in 2.113 seconds (JVM running for 2.427)
+2023-08-30 11:39:23.451  INFO 15316 --- [http-nio-0.0.0.0-9000-exec-1] o.a.c.s.ProxyServiceController.REQ_IN    : REQ_IN
+    Address: http://localhost:9000/services/ProxyServicesImplPort
+    HttpMethod: POST
+    Content-Type: text/xml;charset=UTF-8
+    ExchangeId: de73b348-4a09-4139-b389-77e3455a8d6c
+    ServiceName: ProxyServicesImplService
+    PortName: ProxyServicesImplPort
+    PortTypeName: ProxyServiceController
+    Headers: {SOAPAction="urn:ConsultarPagares", host=localhost:9000, connection=Keep-Alive, content-type=text/xml;charset=UTF-8, Content-Length=919, accept-encoding=gzip,deflate, user-agent=Apache-HttpClient/4.5.5 (Java/16.0.2)}
+    Payload: <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://services.proxy.deceval.com/">
+   
+  <soapenv:Header/>
+   
+  <soapenv:Body>
+      
+    <ser:consultarPagares>
+         <!--Optional:-->
+         
+      <arg0>
+            <!--Optional:-->
+            
+        <consultaPagareServiceDTO>
+               
+          <idTipoIdentificacionFirmante>1</idTipoIdentificacionFirmante>
+               
+          <numIdentificacionFirmante>1026305303</numIdentificacionFirmante>
+               
+          <codigoDeceval>2999477</codigoDeceval>
+            
+        </consultaPagareServiceDTO>
+            <!--Optional:-->
+            
+        <header>
+               
+          <codigoDepositante>142</codigoDepositante>
+              
+          <fecha>2023-08-28T10:00:00</fecha>
+               
+          <hora>15:45</hora>
+               
+          <usuario>1026305302</usuario>
+            
+        </header>
+         
+      </arg0>
+      
+    </ser:consultarPagares>
+   
+  </soapenv:Body>
+
+</soapenv:Envelope>
+
+
+2023-08-30 11:39:23.454  INFO 15316 --- [http-nio-0.0.0.0-9000-exec-1] c.d.i.client.ProxyServiceClient          : Configuracion System
+2023-08-30 11:39:23.455  INFO 15316 --- [http-nio-0.0.0.0-9000-exec-1] c.d.i.client.ProxyServiceClient          : Getting Connection WSDL ...
+2023-08-30 11:39:23.457  INFO 15316 --- [http-nio-0.0.0.0-9000-exec-1] c.d.i.util.PropertiesLoader              : D:\\code\\bvc-dep-pagares-ms-proxy\\src\\main\\resources\\application-dev.properties
+2023-08-30 11:39:23.463  INFO 15316 --- [http-nio-0.0.0.0-9000-exec-1] o.a.c.w.s.f.ReflectionServiceFactoryBean : Creating Service {http://deceval.com/sdl/services/}SDLServiceService from class com.deceval.sdl.services.SDLService
+2023-08-30 11:39:23.727 ERROR 15316 --- [http-nio-0.0.0.0-9000-exec-1] c.d.i.client.ProxyServiceClient          : java.io.IOException
+2023-08-30 11:39:23.728 ERROR 15316 --- [http-nio-0.0.0.0-9000-exec-1] c.d.i.client.ProxyServiceClient          : Password verification failed
+2023-08-30 11:39:23.728 ERROR 15316 --- [http-nio-0.0.0.0-9000-exec-1] c.d.i.client.ProxyServiceClient          : Keystore was tampered with, or password was incorrect
+2023-08-30 11:39:23.729 ERROR 15316 --- [http-nio-0.0.0.0-9000-exec-1] c.d.i.client.ProxyServiceClient          : java.lang.IllegalStateException
+2023-08-30 11:39:23.730  INFO 15316 --- [http-nio-0.0.0.0-9000-exec-1] o.a.c.s.ProxyServiceController.REQ_IN    : REQ_IN
+    Address: http://localhost:9000/services/ProxyServicesImplPort
+    HttpMethod: POST
+    Content-Type: text/xml;charset=UTF-8
+    ExchangeId: de73b348-4a09-4139-b389-77e3455a8d6c
+    ServiceName: ProxyServicesImplService
+    PortName: ProxyServicesImplPort
+    PortTypeName: ProxyServiceController
+    Headers: {SOAPAction="urn:ConsultarPagares", host=localhost:9000, connection=Keep-Alive, content-type=text/xml;charset=UTF-8, Content-Length=919, accept-encoding=gzip,deflate, user-agent=Apache-HttpClient/4.5.5 (Java/16.0.2)}
+    Payload: <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://services.proxy.deceval.com/">
+   
+  <soapenv:Header/>
+   
+  <soapenv:Body>
+      
+    <ser:consultarPagares>
+         <!--Optional:-->
+         
+      <arg0>
+            <!--Optional:-->
+            
+        <consultaPagareServiceDTO>
+               
+          <idTipoIdentificacionFirmante>1</idTipoIdentificacionFirmante>
+               
+          <numIdentificacionFirmante>1026305303</numIdentificacionFirmante>
+               
+          <codigoDeceval>2999477</codigoDeceval>
+            
+        </consultaPagareServiceDTO>
+            <!--Optional:-->
+            
+        <header>
+               
+          <codigoDepositante>142</codigoDepositante>
+              
+          <fecha>2023-08-28T10:00:00</fecha>
+               
+          <hora>15:45</hora>
+               
+          <usuario>1026305302</usuario>
+            
+        </header>
+         
+      </arg0>
+      
+    </ser:consultarPagares>
+   
+  </soapenv:Body>
+
+</soapenv:Envelope>
+
+
+2023-08-30 11:39:23.734  WARN 15316 --- [http-nio-0.0.0.0-9000-exec-1] o.a.cxf.phase.PhaseInterceptorChain      : Application {http://services.proxy.deceval.com/}ProxyServicesImplService#{http://services.proxy.deceval.com/}consultarPagares has thrown exception, unwinding now
+
+org.apache.cxf.interceptor.Fault: null
+	at org.apache.cxf.service.invoker.AbstractInvoker.createFault(AbstractInvoker.java:162) ~[cxf-core-3.3.0.jar:3.3.0]
+	at org.apache.cxf.jaxws.AbstractJAXWSMethodInvoker.createFault(AbstractJAXWSMethodInvoker.java:267) ~[cxf-rt-frontend-jaxws-3.3.0.jar:3.3.0]
+	at org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:128) ~[cxf-core-3.3.0.jar:3.3.0]
+	at org.apache.cxf.jaxws.AbstractJAXWSMethodInvoker.invoke(AbstractJAXWSMethodInvoker.java:232) ~[cxf-rt-frontend-jaxws-3.3.0.jar:3.3.0]
+	at org.apache.cxf.jaxws.JAXWSMethodInvoker.invoke(JAXWSMethodInvoker.java:85) ~[cxf-rt-frontend-jaxws-3.3.0.jar:3.3.0]
+	at org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:74) ~[cxf-core-3.3.0.jar:3.3.0]
+	at org.apache.cxf.interceptor.ServiceInvokerInterceptor$1.run(ServiceInvokerInterceptor.java:59) ~[cxf-core-3.3.0.jar:3.3.0]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[na:1.8.0_382]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[na:1.8.0_382]
+	at org.apache.cxf.interceptor.ServiceInvokerInterceptor$2.run(ServiceInvokerInterceptor.java:126) ~[cxf-core-3.3.0.jar:3.3.0]
+	at org.apache.cxf.workqueue.SynchronousExecutor.execute(SynchronousExecutor.java:37) ~[cxf-core-3.3.0.jar:3.3.0]
+	at org.apache.cxf.interceptor.ServiceInvokerInterceptor.handleMessage(ServiceInvokerInterceptor.java:131) ~[cxf-core-3.3.0.jar:3.3.0]
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:308) ~[cxf-core-3.3.0.jar:3.3.0]
+	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:121) [cxf-core-3.3.0.jar:3.3.0]
+	at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:267) [cxf-rt-transports-http-3.3.0.jar:3.3.0]
+	at org.apache.cxf.transport.servlet.ServletController.invokeDestination(ServletController.java:234) [cxf-rt-transports-http-3.3.0.jar:3.3.0]
+	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:208) [cxf-rt-transports-http-3.3.0.jar:3.3.0]
+	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:160) [cxf-rt-transports-http-3.3.0.jar:3.3.0]
+	at org.apache.cxf.transport.servlet.CXFNonSpringServlet.invoke(CXFNonSpringServlet.java:216) [cxf-rt-transports-http-3.3.0.jar:3.3.0]
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.handleRequest(AbstractHTTPServlet.java:301) [cxf-rt-transports-http-3.3.0.jar:3.3.0]
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.doPost(AbstractHTTPServlet.java:220) [cxf-rt-transports-http-3.3.0.jar:3.3.0]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.service(AbstractHTTPServlet.java:276) [cxf-rt-transports-http-3.3.0.jar:3.3.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_382]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_382]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_382]
+Caused by: java.lang.NullPointerException: null
+	at com.deceval.infrastructure.client.ProxyServiceClient.getService(ProxyServiceClient.java:73) ~[classes/:na]
+	at com.deceval.infrastructure.input.ProxyServiceController.consultarPagares(ProxyServiceController.java:73) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_382]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_382]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_382]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_382]
+	at org.apache.cxf.service.invoker.AbstractInvoker.performInvocation(AbstractInvoker.java:179) ~[cxf-core-3.3.0.jar:3.3.0]
+	at org.apache.cxf.jaxws.JAXWSMethodInvoker.performInvocation(JAXWSMethodInvoker.java:66) ~[cxf-rt-frontend-jaxws-3.3.0.jar:3.3.0]
+	at org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:96) ~[cxf-core-3.3.0.jar:3.3.0]
+	... 53 common frames omitted
+
+2023-08-30 11:39:23.742  INFO 15316 --- [http-nio-0.0.0.0-9000-exec-1] o.a.c.s.P.FAULT_OUT                      : FAULT_OUT
+    Content-Type: text/xml
+    ResponseCode: 500
+    ExchangeId: de73b348-4a09-4139-b389-77e3455a8d6c
+    ServiceName: ProxyServicesImplService
+    PortName: ProxyServicesImplPort
+    PortTypeName: ProxyServiceController
+    Headers: {}
+    Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Server</faultcode>
+      <faultstring>Fault occurred while processing.</faultstring>
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+
+2023-08-30 11:42:28.435  INFO 15316 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-08-30 11:56:27.088  INFO 14008 --- [main] com.deceval.DecevalApplication           : Starting DecevalApplication on DESKTOP-D4K75HQ with PID 14008 (D:\code\bvc-dep-pagares-ms-proxy\target\classes started by User in D:\code\bvc-dep-pagares-ms-proxy)
+2023-08-30 11:56:27.090  INFO 14008 --- [main] com.deceval.DecevalApplication           : The following profiles are active: dev
+2023-08-30 11:56:27.961  INFO 14008 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9000 (http)
+2023-08-30 11:56:27.969  INFO 14008 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-30 11:56:27.969  INFO 14008 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2023-08-30 11:56:28.040  INFO 14008 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-30 11:56:28.040  INFO 14008 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 924 ms
+2023-08-30 11:56:28.193  INFO 14008 --- [main] o.a.c.w.s.f.ReflectionServiceFactoryBean : Creating Service {http://services.proxy.deceval.com/}ProxyServicesImplService from class com.deceval.infrastructure.input.ProxyServiceController
+2023-08-30 11:56:28.753  INFO 14008 --- [main] org.apache.cxf.endpoint.ServerImpl       : Setting the server's publish address to be /ProxyServicesImplPort
+2023-08-30 11:56:28.820  INFO 14008 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-08-30 11:56:28.907  INFO 14008 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9000 (http) with context path ''
+2023-08-30 11:56:28.912  INFO 14008 --- [main] com.deceval.DecevalApplication           : Started DecevalApplication in 2.131 seconds (JVM running for 2.446)
+2023-08-30 12:07:39.550  INFO 14008 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'

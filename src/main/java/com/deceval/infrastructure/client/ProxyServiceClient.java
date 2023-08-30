@@ -53,7 +53,6 @@ public class ProxyServiceClient {
         proxy.getOutInterceptors().add(wss4JOut());
         proxy.getOutFaultInterceptors().add(wss4JOut());
         proxy.setServiceClass(serviceClass);
-        //proxy.getInInterceptors().add(wss4JIn());
         @SuppressWarnings("unchecked")
         T newClient = (T) proxy.create();
         Client client = ClientProxy.getClient(newClient);
@@ -74,10 +73,6 @@ public class ProxyServiceClient {
             LOGGER.error(e.getMessage());
         }
         return newClient;
-    }
-
-    public WSS4JInInterceptor wss4JIn(){
-        return new WSS4JInInterceptor(wss4jProperties());
     }
 
     public WSS4JOutInterceptor wss4JOut() {
