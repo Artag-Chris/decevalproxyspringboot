@@ -6,7 +6,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.3.1.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/>
 	</parent>
 	<groupId>com</groupId>
 	<artifactId>deceval</artifactId>
@@ -71,12 +71,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>1.18.28</version>
-		</dependency>
-
-		<dependency>
 			<groupId>com.sun.xml.messaging.saaj</groupId>
 			<artifactId>saaj-impl</artifactId>
 			<version>1.3.28</version>
@@ -126,10 +120,6 @@
 										<bindingFile>${basedir}/src/main/resources/cxf-beans.xml</bindingFile>
 									</bindingFiles>
 									<wsdlLocation>classpath:proxy/proxyservicesimpl.wsdl</wsdlLocation>
-									<!--<extraargs>
-										<extraarg>-p</extraarg>
-										<extraarg>http://tempuri.org/=org.temp.calculator</extraarg>
-									</extraargs>-->
 								</wsdlOption>
 								<wsdlOption>
 									<wsdl>${basedir}/src/main/resources/proxy/SDLService.wsdl</wsdl>
@@ -215,17 +205,12 @@
 							<wsdlLocation>/*</wsdlLocation>
 							<keep>true</keep>
 							<wsdlFiles>
-							<!--	<wsdlFile>/wsdl/SDLService.wsdl</wsdlFile>-->
 								<wsdlFile>/proxy/proxyservicesimpl.wsdl</wsdlFile>
-						<!--		<wsdlFile>/wsdl/WsGenerarTokenService.wsdl</wsdlFile>-->
 							</wsdlFiles>
 							<sources>
 								<source>${project.basedir}/src/main/resources/proxy/proxyservicesimpl_schema1.xsd</source>
 								<source>${project.basedir}/src/main/resources/proxy/proxyservicesimpl_schema2.xsd</source>
 								<source>${project.basedir}/src/main/resources/proxy/proxyservicesimpl_schema3.xsd</source>
-							<!--	<source>${project.basedir}/src/main/resources/wsdl/SDLService_1.xsd</source>
-								<source>${project.basedir}/src/main/resources/wsdl/WsGenerarTokenService_1.xsd</source>
-								<source>${project.basedir}/src/main/resources/wsdl/WsGenerarTokenService_1.xsd</source>-->
 							</sources>
 							<sourceDestDir>src/main/java</sourceDestDir>
 							<vmArgs>
