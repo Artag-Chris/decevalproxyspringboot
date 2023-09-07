@@ -43,7 +43,7 @@ public class ProxyServiceClient {
     Logger LOGGER = LoggerFactory.getLogger(ProxyServiceClient.class);
 
     public <T> T getService(Class<T> serviceClass){
-        LOGGER.info("Configuracion System");
+        LOGGER.info("Configuration System");
         LOGGER.info("Getting Connection WSDL ...");
         JaxWsProxyFactoryBean proxy = new JaxWsProxyFactoryBean();
         proxy.setAddress(PropertiesLoader.loadProperty(ConstantsProperties.SDL_ENDPOINT.getName()));
@@ -81,11 +81,10 @@ public class ProxyServiceClient {
 
     private HashMap<String, Object> wss4jProperties() {
         HashMap<String, Object> properties = new HashMap<>();
-        StringBuilder acciones = new StringBuilder();
-        acciones.append(WSSConstantes.USERNAMETOKEN.getValor()).append(" ")
-                .append(WSSConstantes.FIRMADO.getValor()).append(" ")
-                .append(WSSConstantes.TIMESTAMP.getValor());
-        properties.put(WSHandlerConstants.ACTION, acciones.toString());
+        String actions = WSSConstantes.USERNAMETOKEN.getValor() + " " +
+                WSSConstantes.FIRMADO.getValor() + " " +
+                WSSConstantes.TIMESTAMP.getValor();
+        properties.put(WSHandlerConstants.ACTION, actions);
         properties.put(WSHandlerConstants.SIGNATURE_USER,
                 PropertiesLoader.loadProperty(ConstantsProperties.WSSECURITY_USER.getName()));
         properties.put(WSHandlerConstants.SIG_PROP_REF_ID, "cryptoProperties");

@@ -1,6 +1,7 @@
 package com.deceval.infrastructure.input;
 
 import com.deceval.infrastructure.client.ProxyServiceClient;
+import com.deceval.infrastructure.util.PropertiesLoader;
 import com.deceval.mrc.solicitud.WsGenerarTokenPortType;
 import com.deceval.sdl.services.CambioEstadoPagareDTO;
 import com.deceval.sdl.services.RadicacionSolicitudRequestNatural;
@@ -181,6 +182,12 @@ public class ProxyServiceController implements Serializable {
     public com.deceval.mrc.solicitud.model.InformacionFirmaPagareTO generarToken(@WebParam(name = "arg0") com.deceval.mrc.solicitud.model.InformacionPagareTO informacionPagareTO) {
         WsGenerarTokenPortType service = sdlClient.getService(WsGenerarTokenPortType.class);
         return service.generarToken(informacionPagareTO);
+    }
+
+    @WebMethod(operationName = "reloadProperties", action = "urn:ReloadProperties")
+    public String reloadProperties(){
+        PropertiesLoader.forcePropertiesFileReload();
+        return "Successful";
     }
 
 }

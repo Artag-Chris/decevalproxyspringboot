@@ -2,10 +2,9 @@ package com.deceval.infrastructure.util;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.io.FileReader;
-import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Properties;
 
 /**
@@ -16,16 +15,18 @@ public class PropertiesLoader {
 
     static Logger LOGGER = LoggerFactory.getLogger(PropertiesLoader.class);
 
+    private final static  String PATH_PROPERTIES = "PATH_CLIENT_PROPERTIES";
+    private final static String ERROR_LOAD_PROPERTIES = "Error no fue posible cargar el archivo de propiedades";
+
     private static PropertiesLoader propsLoader = null;
 
     private Properties properties = null;
 
-    private PropertiesLoader() throws Exception {
+    private PropertiesLoader() {
         loadPropertiesFile();
     }
 
-    private static PropertiesLoader getInstance() throws Exception {
-
+    private static PropertiesLoader getInstance() {
         if (propsLoader == null) {
             propsLoader = new PropertiesLoader();
         }
@@ -33,55 +34,26 @@ public class PropertiesLoader {
     }
 
     public static String loadProperty(String key) {
-        String value = null;
-        try {
-            value = getInstance().properties.getProperty(key);
-        } catch (Exception e) {
-            LOGGER.error(e.getClass().getName());
-            LOGGER.error(e.getCause().getMessage());
-            LOGGER.error(e.getMessage());
-            LOGGER.error("Error cargando archivo de propiedades");
-            e.printStackTrace();
-        }
-        return value;
+        return getInstance().properties.getProperty(key);
     }
 
-    private void loadPropertiesFile() throws Exception {
-        InputStream instr = null;
-        try {
-            String path = System.getenv("PATH_CLIENT_PROPERTIES");
+    private void loadPropertiesFile() {
+        String path = System.getenv(PATH_PROPERTIES);
+        try (InputStream reader = Files.newInputStream(Paths.get(path))) {
             LOGGER.info(path);
-            Properties p = System.getProperties();
-            FileReader reader = new FileReader(path);
-            if (reader != null) {
-                Properties props = new Properties();
-                props.load(reader);
-                properties = props;
-            } else {
-                Properties props = new Properties();
-                instr = this.getClass().getResourceAsStream(path);
-                props.load(instr);
-                properties = props;
-            }
+            Properties props = new Properties();
+            props.load(reader);
+            properties = props;
         } catch (Exception e) {
-            throw e;
-        } finally {
-            try {
-                if (instr != null) {
-                    instr.close();
-                }
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
+            LOGGER.error(ERROR_LOAD_PROPERTIES);
+            LOGGER.error(e.getClass().getName());
+            LOGGER.error(e.getMessage());
+            LOGGER.error(e.getCause().getMessage());
         }
     }
 
-    /**
-     * Forces the reloading of properties file by setting to null
-     * the singleton instance.
-     */
-    public static void forcePropertiesFileReload() {
-        propsLoader = null;
+    public static void forcePropertiesFileReload(){
+        propsLoader=null;
     }
 
 }
