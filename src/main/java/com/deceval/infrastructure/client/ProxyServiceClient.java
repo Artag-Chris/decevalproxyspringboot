@@ -12,7 +12,6 @@ import org.apache.cxf.frontend.ClientProxy;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 import org.apache.cxf.transport.http.HTTPConduit;
 import org.apache.cxf.transports.http.configuration.HTTPClientPolicy;
-import org.apache.cxf.ws.security.wss4j.WSS4JInInterceptor;
 import org.apache.cxf.ws.security.wss4j.WSS4JOutInterceptor;
 import org.apache.wss4j.dom.WSConstants;
 import org.apache.wss4j.dom.handler.WSHandlerConstants;
@@ -27,7 +26,6 @@ import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
 import java.io.InputStream;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.KeyStore;
 import java.util.HashMap;
@@ -40,11 +38,11 @@ import java.util.Properties;
 @Configuration
 public class ProxyServiceClient {
 
-    Logger LOGGER = LoggerFactory.getLogger(ProxyServiceClient.class);
+    Logger logger = LoggerFactory.getLogger(ProxyServiceClient.class);
 
     public <T> T getService(Class<T> serviceClass){
-        LOGGER.info("Configuration System");
-        LOGGER.info("Getting Connection WSDL ...");
+        logger.info("Configuration System");
+        logger.info("Getting Connection WSDL ...");
         JaxWsProxyFactoryBean proxy = new JaxWsProxyFactoryBean();
         proxy.setAddress(PropertiesLoader.loadProperty(ConstantsProperties.SDL_ENDPOINT.getName()));
         LoggingFeature loggingFeature = new LoggingFeature();
@@ -68,9 +66,9 @@ public class ProxyServiceClient {
             conduit.setClient(clientPolicy);
             conduit.setTlsClientParameters(tls);
         }catch (Exception e){
-            LOGGER.error(e.getClass().getName());
-            LOGGER.error(e.getCause().getMessage());
-            LOGGER.error(e.getMessage());
+            logger.error(e.getClass().getName());
+            logger.error(e.getCause().getMessage());
+            logger.error(e.getMessage());
         }
         return newClient;
     }
@@ -128,9 +126,9 @@ public class ProxyServiceClient {
             System.setProperty("http.auth.digest.validateServer", "true");
 
         } catch (Exception e) {
-            LOGGER.error(e.getClass().getName());
-            LOGGER.error(e.getCause().getMessage());
-            LOGGER.error(e.getMessage());
+            logger.error(e.getClass().getName());
+            logger.error(e.getCause().getMessage());
+            logger.error(e.getMessage());
         }
     }
 

@@ -41,11 +41,11 @@ public class WebServiceConfig {
 
     @Bean(name = Bus.DEFAULT_BUS_ID)
     public SpringBus springBus() {
-        SpringBus springBus = new SpringBus();
-        springBus.getInInterceptors().add(loggingInterceptor());
-        springBus.getInFaultInterceptors().add(loggingInterceptor());
-        springBus.getOutInterceptors().add(logOutInterceptor());
-        springBus.getOutFaultInterceptors().add(logOutInterceptor());
+        SpringBus bus = new SpringBus();
+        bus.getInInterceptors().add(loggingInterceptor());
+        bus.getInFaultInterceptors().add(loggingInterceptor());
+        bus.getOutInterceptors().add(logOutInterceptor());
+        bus.getOutFaultInterceptors().add(logOutInterceptor());
         return new SpringBus();
     }
 

@@ -20,12 +20,12 @@ import java.io.IOException;
  */
 public class PasswordCallback implements CallbackHandler {
 
-    Logger LOGGER = LoggerFactory.getLogger(PasswordCallback.class);
+    Logger logger = LoggerFactory.getLogger(PasswordCallback.class);
 
     @Override
     public void handle(Callback[] callbacks) throws IOException, UnsupportedCallbackException {
         WSPasswordCallback pc = (WSPasswordCallback) callbacks[0];
-        LOGGER.info("Identificador: " + pc.getIdentifier());
+        logger.info("Identificador: " + pc.getIdentifier());
         if (pc.getIdentifier() != null) {
             pc.setPassword(null);
             if (pc.getIdentifier().equals(PropertiesLoader.loadProperty(ConstantsProperties.WSSECURITY_USER.getName()))) {

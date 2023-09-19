@@ -35,11 +35,9 @@ import java.io.Serializable;
  * @author inerjanuerBernate
  */
 @WebService(targetNamespace = "http://services.proxy.deceval.com/", portName = "ProxyServicesImplPort", serviceName = "ProxyServicesImplService")
-public class ProxyServiceController implements Serializable {
+public class ProxyServiceController {
 
-    private static final long serialVersionUID = 1L;
-
-    private ProxyServiceClient sdlClient;
+    private final ProxyServiceClient sdlClient;
 
     public ProxyServiceController() {
         sdlClient = new ProxyServiceClient();

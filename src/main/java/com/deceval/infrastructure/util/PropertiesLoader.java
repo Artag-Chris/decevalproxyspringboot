@@ -13,10 +13,10 @@ import java.util.Properties;
  */
 public class PropertiesLoader {
 
-    static Logger LOGGER = LoggerFactory.getLogger(PropertiesLoader.class);
+    static Logger logger = LoggerFactory.getLogger(PropertiesLoader.class);
 
-    private final static  String PATH_PROPERTIES = "PATH_CLIENT_PROPERTIES";
-    private final static String ERROR_LOAD_PROPERTIES = "Error no fue posible cargar el archivo de propiedades";
+    private static final String PATH_PROPERTIES = "PATH_CLIENT_PROPERTIES";
+    private static final String ERROR_LOAD_PROPERTIES = "Error no fue posible cargar el archivo de propiedades";
 
     private static PropertiesLoader propsLoader = null;
 
@@ -40,15 +40,15 @@ public class PropertiesLoader {
     private void loadPropertiesFile() {
         String path = System.getenv(PATH_PROPERTIES);
         try (InputStream reader = Files.newInputStream(Paths.get(path))) {
-            LOGGER.info(path);
+            logger.info(path);
             Properties props = new Properties();
             props.load(reader);
             properties = props;
         } catch (Exception e) {
-            LOGGER.error(ERROR_LOAD_PROPERTIES);
-            LOGGER.error(e.getClass().getName());
-            LOGGER.error(e.getMessage());
-            LOGGER.error(e.getCause().getMessage());
+            logger.error(ERROR_LOAD_PROPERTIES);
+            logger.error(e.getClass().getName());
+            logger.error(e.getMessage());
+            logger.error(e.getCause().getMessage());
         }
     }
 
