@@ -10,7 +10,7 @@ server:
 
 logging:
   file:
-    name: ${PATH_LOGS}\Server.log
+    name: ${PATH_LOGS}
   logback:
     rollingpolicy:
       file-name-pattern: Server-%d{yyyy-MM-dd}.log
