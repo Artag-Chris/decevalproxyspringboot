@@ -32,7 +32,9 @@ import java.util.HashMap;
 import java.util.Properties;
 
 /**
- * Esta clase se encarga de toda la configuracion de ssl, crypto, wss4 y ruta de acceso a los servicios wsdl
+ * Esta clase se encarga de toda la configuracion de ssl, crypto, wss4 y ruta de
+ * acceso a los servicios wsdl
+ * 
  * @author inerjanuerBernate
  */
 @Configuration
@@ -40,7 +42,7 @@ public class ProxyServiceClient {
 
     Logger logger = LoggerFactory.getLogger(ProxyServiceClient.class);
 
-    public <T> T getService(Class<T> serviceClass){
+    public <T> T getService(Class<T> serviceClass) {
         logger.info("Configuration System");
         logger.info("Getting Connection WSDL ...");
         JaxWsProxyFactoryBean proxy = new JaxWsProxyFactoryBean();
@@ -65,7 +67,7 @@ public class ProxyServiceClient {
             clientPolicy.setReceiveTimeout(10000);
             conduit.setClient(clientPolicy);
             conduit.setTlsClientParameters(tls);
-        }catch (Exception e){
+        } catch (Exception e) {
             logger.error(e.getClass().getName());
             logger.error(e.getCause().getMessage());
             logger.error(e.getMessage());
@@ -91,7 +93,8 @@ public class ProxyServiceClient {
         properties.put(WSHandlerConstants.SIGNATURE_PARTS, ConstantesFirmaDigital.SIGN_PARTS);
 
         // Configuracion UsernameToken
-        properties.put(WSHandlerConstants.USER, PropertiesLoader.loadProperty(ConstantsProperties.TOKEN_USERNAME.getName()));
+        properties.put(WSHandlerConstants.USER,
+                PropertiesLoader.loadProperty(ConstantsProperties.TOKEN_USERNAME.getName()));
         properties.put(WSHandlerConstants.PASSWORD_TYPE, WSConstants.PW_DIGEST);
         properties.put(WSHandlerConstants.PW_CALLBACK_CLASS, PasswordCallback.class.getName());
         properties.put("cryptoProperties", cryptoProperties());
@@ -99,26 +102,27 @@ public class ProxyServiceClient {
     }
 
     public void setupSsl(SSLContext sslContext) {
-        try(InputStream identityInputStream = Files.newInputStream(Paths.get(
+        try (InputStream identityInputStream = Files.newInputStream(Paths.get(
                 PropertiesLoader.loadProperty(ConstantsProperties.SSL_KEYSTORE_FILE.getName())));
-            InputStream trustStoreInputStream = Files.newInputStream(Paths.get(
-                PropertiesLoader.loadProperty(ConstantsProperties.SSL_KEYSTORE_FILE.getName())))) {
+                InputStream trustStoreInputStream = Files.newInputStream(Paths.get(
+                        PropertiesLoader.loadProperty(ConstantsProperties.SSL_KEYSTORE_FILE.getName())))) {
 
             KeyStore identity = KeyStore.getInstance(KeyStore.getDefaultType());
             identity.load(identityInputStream,
                     PropertiesLoader.loadProperty(ConstantsProperties.SSL_KEYSTORE_PASSWORD.getName()).toCharArray());
 
-            KeyManagerFactory keyManagerFactory = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
+            KeyManagerFactory keyManagerFactory = KeyManagerFactory
+                    .getInstance(KeyManagerFactory.getDefaultAlgorithm());
             keyManagerFactory.init(identity,
                     PropertiesLoader.loadProperty(ConstantsProperties.SSL_KEYSTORE_PASSWORD.getName()).toCharArray());
             KeyManager[] keyManagers = keyManagerFactory.getKeyManagers();
-
 
             KeyStore trusstore = KeyStore.getInstance(KeyStore.getDefaultType());
             trusstore.load(trustStoreInputStream,
                     PropertiesLoader.loadProperty(ConstantsProperties.SSL_KEYSTORE_PASSWORD.getName()).toCharArray());
 
-            TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+            TrustManagerFactory trustManagerFactory = TrustManagerFactory
+                    .getInstance(TrustManagerFactory.getDefaultAlgorithm());
             trustManagerFactory.init(trusstore);
             TrustManager[] trustManagers = trustManagerFactory.getTrustManagers();
 
@@ -132,7 +136,7 @@ public class ProxyServiceClient {
         }
     }
 
-    public Properties cryptoProperties(){
+    public Properties cryptoProperties() {
         Properties properties = new Properties();
         properties.put("org.apache.wss4j.crypto.merlin.provider",
                 PropertiesLoader.loadProperty(ConstantsProperties.CRYPTO_PROVIDER.getName()));
